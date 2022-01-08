@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linerLayout5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <LinearLayout
+            android:id="@+id/RelativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:orientation="vertical">
+
+            <!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/dateFilterContainer"-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Shiny Charm"-->
+<!--                app:boxBackgroundColor="@color/design_default_color_on_primary">-->
+
+<!--                <AutoCompleteTextView-->
+<!--                    android:id="@+id/datesFilterSpinner"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:inputType="none"-->
+<!--                    android:dropDownSelector="@color/design_default_color_on_primary"-->
+<!--                    android:ellipsize="end"-->
+<!--                    android:maxLines="1"-->
+<!--                    android:singleLine="true"-->
+<!--                    tools:text="Faulse" />-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+            <TextView
+                android:id="@+id/state0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/state0Label" />
+
+            <EditText
+                android:id="@+id/s0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="8"
+                android:inputType="textPersonName"
+                android:text="@string/state"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/state1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/state1Label" />
+
+            <EditText
+                android:id="@+id/s1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="8"
+                android:inputType="textPersonName"
+                android:text="@string/state"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/stateSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/purple_200"
+                android:onClick="onclickState"
+                android:text="State"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@+id/stateLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/hani"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Adv:" />
+
+            <EditText
+                android:id="@+id/advmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="number"
+                android:text="0"
+                android:textSize="12sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/advmax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="number"
+                android:text="1000"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tsvLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TSV:" />
+
+            <EditText
+                android:id="@+id/tsv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:ems="4"
+                android:inputType="textPersonName"
+                android:text="1234"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/trvLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TRV:" />
+
+            <EditText
+                android:id="@+id/trv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:ems="1"
+                android:inputType="textPersonName"
+                android:text="1"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/shinycharm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Shiny Charm"
+                android:textSize="14sp" />
+
+
+
+            <CheckBox
+                android:id="@+id/markcharm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mark Charm"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/purple_500"
+                android:onClick="onclickMainSearch"
+                android:text="Search"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/markLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mark:" />
+
+            <EditText
+                android:id="@+id/desiredMark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Ignore" />
+
+            <TextView
+                android:id="@+id/ShinyLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Shiny:" />
+
+            <EditText
+                android:id="@+id/desiredShiny"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Ignore" />
+
+            <TextView
+                android:id="@+id/natureLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nature:" />
+
+            <EditText
+                android:id="@+id/desiredNature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Ignore" />
+
+            <CheckBox
+                android:id="@+id/cutecharm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cute Charm"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <CheckBox
+                android:id="@+id/weather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:text="Weather"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/randomItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Random held item"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/fishing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Fishing"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/isabilitylocked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ability Locked"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/legendary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Legendary"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/statickcheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Static"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/TSVsearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TSV Search"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/hp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="HP:" />
+
+            <LinearLayout
+                android:id="@+id/hpLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/hmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="2"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/hihun2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/hmax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="130dp"
+                    android:layout_weight="1"
+                    android:ems="2"
+                    android:inputType="number"
+                    android:text="31"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/atk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Atk:" />
+
+            <LinearLayout
+                android:id="@+id/AtkLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/amin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="2"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/hihun3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/amax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="130dp"
+                    android:layout_weight="1"
+                    android:ems="2"
+                    android:inputType="number"
+                    android:text="31"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/def"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Def:" />
+
+            <LinearLayout
+                android:id="@+id/DefLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/bmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="2"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/hihun4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/bmax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="130dp"
+                    android:layout_weight="1"
+                    android:ems="2"
+                    android:inputType="number"
+                    android:text="31"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/spa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SpA:" />
+
+            <LinearLayout
+                android:id="@+id/SpALine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/cmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="2"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/hihun5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/cmax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="130dp"
+                    android:layout_weight="1"
+                    android:ems="2"
+                    android:inputType="number"
+                    android:text="31"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/spd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SpD:" />
+
+            <LinearLayout
+                android:id="@+id/SpDLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/dmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="2"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/hihun6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/dmax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="130dp"
+                    android:layout_weight="1"
+                    android:ems="2"
+                    android:inputType="number"
+                    android:text="31"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/spe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Spe:" />
+
+            <LinearLayout
+                android:id="@+id/SpeLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="32dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/smin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="2"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/hihun7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/smax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="130dp"
+                    android:layout_weight="1"
+                    android:ems="2"
+                    android:inputType="number"
+                    android:text="31"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/SlotLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Slot:" />
+
+            <LinearLayout
+                android:id="@+id/slotLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/SlotMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="2"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="10sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <TextView
+                    android:id="@+id/hihun8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/SlotMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="99"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/LvLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Level:" />
+
+            <LinearLayout
+                android:id="@+id/LevelLine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/LvMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="2"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="10sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <TextView
+                    android:id="@+id/hihunl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/LvMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/KOlabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="KOs:" />
+
+            <EditText
+                android:id="@+id/KOs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="2"
+                android:inputType="number"
+                android:text="0"
+                android:textSize="10sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:orientation="vertical"
+    tools:context=".State_Search">
+
+    <ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/RelativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:orientation="vertical">
+
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="state search   0:Physical, 1:Special"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/motionSpace0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="Atk=0, Spa=1"
+                android:ems="128"
+                android:inputType="number"
+                android:hint="motion"
+                android:text="" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/motioncountLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/motioncountLabel" />
+
+                <TextView
+                    android:id="@+id/motioncount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/motioncount" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/state0_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/state0Label" />
+
+            <TextView
+                android:id="@+id/s0_search0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="8"
+                android:text="@string/state"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/state1_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/state1Label" />
+
+            <TextView
+                android:id="@+id/s1_search0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="8"
+                android:text="@string/state"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/searchButton0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onclickSearch0"
+                    android:text="Search" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:onClick="onclickOK0"
+                    android:text="OK" />
+            </LinearLayout>
+
+            <TextView
+        android:id="@+id/denStateSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="frame search" />
+
+            <EditText
+                android:id="@+id/motionSpace1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="Atk=0, Spa=1"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="motion"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Search range" />
+
+            <EditText
+                android:id="@+id/stateSearchMin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="min"
+                android:text="0" />
+
+            <EditText
+                android:id="@+id/stateSearchMax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="max"
+                android:inputType="number"
+                android:text="1000" />
+
+            <TextView
+                android:id="@+id/state0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/state0Label" />
+
+            <TextView
+                android:id="@+id/s0_search1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="8"
+                android:text="@string/state"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/state1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/state1Label" />
+
+            <TextView
+                android:id="@+id/s1_search1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="8"
+                android:text="@string/state"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/frameResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[F]: 0, resultCount: 0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/searchButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:onClick="onclickSearch1"
+                    android:text="search" />
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onclickOK1"
+                    android:text="OK" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
+
