@@ -18,6 +18,7 @@ Android 7.0.4
 # Credit
 
 I borrowed some code from the swsh-overworld-rng-gui [@LegoFigure11](https://github.com/LegoFigure11/) .
+
 I transrate C# code to Java and C++ code for Android.
 
 # License
