@@ -48,12 +48,12 @@ public class State_Search extends AppCompatActivity {
         TextView motioncount = findViewById(R.id.motioncount);
 
         if(n < 128){
-            motioncount.setText(count + "  not enough motions");
+            motioncount.setText(count);
             return;
         }
 
         byte[] motions = new byte[n];
-        for(int i=0; i<motion.length(); i++) {
+        for(int i=0; i<n; i++) {
             char r = motion.charAt(i);
             if(r == '0') {
                 motions[i] = 0;
@@ -66,7 +66,7 @@ public class State_Search extends AppCompatActivity {
         SeedSolverConig config = new SeedSolverConig();
         config.setMotions(motions);
 
-        if(n >= 128) {
+        if(n == 128) {
             // 初期state検索
             config.setS0(null);
             config.setS1(null);

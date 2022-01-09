@@ -3,20 +3,6 @@ plugins {
 }
 
 android {
-    signingConfigs {
-        debug {
-            storePassword 'g2EnzCdj'
-            keyPassword 'g2EnzCdj'
-            storeFile file('C:\\Users\\asano\\AndroidStudioProjects\\swshoverworldrngtol.jks')
-            keyAlias 'swshoverworldrngtool'
-        }
-        release {
-            storeFile file('C:\\Users\\asano\\AndroidStudioProjects\\swshoverworldrngtol.jks')
-            keyAlias 'swshoverworldrngtool'
-            storePassword 'g2EnzCdj'
-            keyPassword 'g2EnzCdj'
-        }
-    }
     compileSdk 32
 
     defaultConfig {

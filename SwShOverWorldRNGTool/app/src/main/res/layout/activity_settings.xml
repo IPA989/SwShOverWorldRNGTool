@@ -24,4 +24,20 @@
         android:autoLink="web"
         android:text="https://github.com/IPA989/SwShOverWorldRNGTool" />
 
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Licenses"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+android:text="
+GNU General Public License v3.0\nhttps://github.com/IPA989/SwShOverWorldRNGTool/blob/main/LICENSE\n
+MIT License\nhttps://github.com/IPA989/SwShOverWorldRNGTool/blob/main/Licenses/MITLICENSE" />
+
 </LinearLayout>

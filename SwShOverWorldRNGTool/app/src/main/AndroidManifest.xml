@@ -11,14 +11,14 @@
         android:theme="@style/Theme.SwShOverWorldRNGTool">
         <activity
             android:name=".State_Search"
-            android:label="StateSearch"
             android:exported="false"
+            android:label="StateSearch"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Settings"
             android:exported="false"
-            android:parentActivityName=".MainActivity"
-            android:label="Settings" />
+            android:label="Settings"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
