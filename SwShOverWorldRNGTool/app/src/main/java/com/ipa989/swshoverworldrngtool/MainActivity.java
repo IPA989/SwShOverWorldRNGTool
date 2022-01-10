@@ -60,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
         // Restore the state.
-        if (savedInstanceState != null) {
-            mMessages0.setText(savedInstanceState.getString("s0_text"));
-            mMessages1.setText(savedInstanceState.getString("s1_text"));
+//        if (savedInstanceState != null) {
+//            mMessages0.setText(savedInstanceState.getString("s0_text"));
+//            mMessages1.setText(savedInstanceState.getString("s1_text"));
 //            if(savedInstanceState.getBoolean("ShinyCharm")){
 //                shiny.setChecked(true);
 //            }
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //            tsv.setText(savedInstanceState.getString("tsv"));
 //            trv.setText(savedInstanceState.getString("trv"));
-        }
+//        }
     }
 
 
