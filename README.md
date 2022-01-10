@@ -2,7 +2,7 @@
 
 # About
 
-This program is Android Appcation for Pokémon Sword and Shield Overworld RNG.
+This program is Android application for Pokémon Sword and Shield Overworld RNG.
 
 # Download
 
