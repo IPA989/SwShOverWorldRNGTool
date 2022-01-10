@@ -9,7 +9,7 @@
 // returnをjobjectarrayでvector<string>で行区切りで出力すれば色違いの色を変えられる?
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_example_swshoverworldrngtool_MainActivity_resultFromJNI(
+Java_com_ipa989_swshoverworldrngtool_MainActivity_resultFromJNI(
         JNIEnv* env,
         jobject ,
         jstring state0, jstring state1,

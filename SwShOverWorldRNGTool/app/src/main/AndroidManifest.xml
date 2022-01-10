@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.swshoverworldrngtool">
+    package="com.ipa989.swshoverworldrngtool">
 
     <application
         android:allowBackup="true"
@@ -10,17 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SwShOverWorldRNGTool">
         <activity
-            android:name=".State_Search"
+            android:name="com.ipa989.swshoverworldrngtool.State_Search"
             android:exported="false"
             android:label="StateSearch"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.ipa989.swshoverworldrngtool.MainActivity" />
         <activity
-            android:name=".Settings"
+            android:name="com.ipa989.swshoverworldrngtool.Settings"
             android:exported="false"
             android:label="Settings"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.ipa989.swshoverworldrngtool.MainActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.ipa989.swshoverworldrngtool.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.SwShOverWorldRNGTool.NoActionBar">
