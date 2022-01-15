@@ -12,12 +12,12 @@
     <string name="toast_message">Search success!</string>
     <string name="toast_errormessage">input error!</string>
     <string name="stateSearchButton">State</string>
-    <string name="advancesLabel">Advances range:</string>
-    <string name="advMax">1000</string>
+    <string name="advancesLabel">Advances:</string>
     <string name="advMin">0</string>
-    <string name="tsvLabel">TSV:</string>
-    <string name="tsv">1234</string>
-    <string name="trv">1</string>
+    <string name="advMax">100</string>
+    <string name="tsvLabel">TID:</string>
+    <string name="tsv">19744</string>
+    <string name="trv">0</string>
     <string name="shinyCharm">Shiny Charm</string>
     <string name="markCharm">Mark Charm</string>
     <string name="markLabel">Mark:</string>
@@ -54,7 +54,7 @@
     <string name="search_range">Search range</string>
     <string name="stateSearchMin">0</string>
     <string name="denStateSearch">Advances search</string>
-    <string name="trvLabel">TRV:</string>
+    <string name="trvLabel">SID:</string>
     <string name="spd">SpD:</string>
     <string name="legendary">Legendary</string>
     <string name="spe">Spe:</string>

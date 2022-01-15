@@ -135,7 +135,7 @@
                 android:autofillHints="" />
 
             <TextView
-                android:id="@+id/tsvLabel"
+                android:id="@+id/tidLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -148,7 +148,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:ems="4"
-                android:maxLength="4"
+                android:maxLength="5"
                 android:inputType="number"
                 android:minHeight="48dp"
                 android:text="@string/tsv"
@@ -156,7 +156,7 @@
                 android:autofillHints="" />
 
             <TextView
-                android:id="@+id/trvLabel"
+                android:id="@+id/sidLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -169,7 +169,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:ems="1"
-                android:maxLength="1"
+                android:maxLength="5"
                 android:inputType="number"
                 android:minHeight="48dp"
                 android:text="@string/trv"

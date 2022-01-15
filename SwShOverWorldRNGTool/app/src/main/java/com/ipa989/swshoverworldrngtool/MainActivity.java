@@ -242,8 +242,6 @@ public class MainActivity extends AppCompatActivity {
 
         if(
                 MaxAdv > 100000000 ||
-                TSV > 4096 ||
-                TRV >= 16 ||
                 LevelMax > 100 ||
                 SlotMax > 100 ||
                 LevelMax < LevelMin ||
@@ -251,8 +249,6 @@ public class MainActivity extends AppCompatActivity {
         ){
             search = false;
         }
-
-
 
         for(int i=0; i<6; i++){
             if(MaxIVs[i] < MinIVs[i]){
@@ -264,8 +260,6 @@ public class MainActivity extends AppCompatActivity {
             toastError();
             return;
         }
-
-
 
         // call to a native method
         TextView tv = findViewById(R.id.resultView);

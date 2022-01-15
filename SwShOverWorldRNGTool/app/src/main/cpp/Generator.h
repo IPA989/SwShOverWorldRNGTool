@@ -17,7 +17,7 @@ class Generator {
 public:
     static std::vector<std::string>
     Generate(unsigned long long state0, unsigned long long state1, unsigned long long InitialAdvances,
-             unsigned long long advances, unsigned int TSV, unsigned int TRV,
+             unsigned long long advances, unsigned int TID, unsigned int SID,
              bool ShinyCharm, bool MarkCharm, bool Weather, bool Static,
              bool Fishing, bool HeldItem, string DesiredMark,
              string DesiredShiny, string DesiredNature, unsigned int LevelMin,
@@ -47,9 +47,9 @@ public:
             MarkRolls = 1;
         int results = 0;
 
-//        unsigned int TSV = GetTSV(TID, SID);
-        int TIDSID = (TSV << 4) + TRV;
-        int maxView = 10000;
+        unsigned int TSV = GetTSV(TID, SID);
+        // int          TIDSID  = (TSV << 4) + TRV;
+        int          maxView = 10000;
         unsigned int IVs[6];
         bool         GenerateLevel = (LevelMin != LevelMax);
         unsigned int LevelDelta    = LevelMax - LevelMin + 1;
@@ -73,7 +73,7 @@ public:
         }
 
         while (advance < advances & results < maxView) {
-//        while (advance < advances) {
+            //        while (advance < advances) {
 
             // Init new RNG
             Xoroshiro rng(go.state0, go.state1);
@@ -93,7 +93,6 @@ public:
                 if (IsCuteCharm && LeadRand <= 65)
                     Gender = "CC";
 
-                // cout << "Slot" << endl;
                 SlotRand = (unsigned int)rng.Rand(100);
                 if (SlotMin > SlotRand || SlotMax < SlotRand) {
                     if (TIDSIDSearch)
@@ -105,7 +104,6 @@ public:
                 }
 
                 if (GenerateLevel) {
-                    // cout << "GenerateLevel" << endl;
                     Level = LevelMin + (unsigned int)rng.Rand(LevelDelta);
                 }
                 else {
@@ -115,7 +113,6 @@ public:
                 Mark =
                         GenerateMark(&rng, Weather, Fishing,
                                      MarkRolls); // Double Mark Gen happens always?
-                // cout << "BrilliantRand" << endl;
                 BrilliantRand = (unsigned int)rng.Rand(1000);
                 if (BrilliantRand < BrilliantThreshold)
                     Brilliant = true;
@@ -131,11 +128,11 @@ public:
                 else
                     tmp = 0;
                 for (int roll = 0; roll < ShinyRolls + tmp; roll++) {
-                    // cout << "mockPID" << endl;
                     MockPID = rng.Nextuint();
-                    Shiny = (((MockPID >> 16) ^ (MockPID & 0xFFFF)) ^ TIDSID) < 16;
-                    if (Shiny)
+                    Shiny = (((MockPID >> 16) ^ (MockPID & 0xFFFF)) ^ TSV) < 16;
+                    if (Shiny == 1) {
                         break;
+                    }
                 }
             }
 
@@ -161,11 +158,15 @@ public:
 
             FixedSeed = rng.Nextuint();
 
-
             vector<string> strings = CalculateFixed(
-                    FixedSeed, TIDSID, Shiny,
-                    (int)(FlawlessIVs + BrilliantIVs), MinIVs, MaxIVs);
+                    FixedSeed, TSV, Shiny, (int)(FlawlessIVs + BrilliantIVs),
+                    MinIVs, MaxIVs);
             // strings{EC, PID, IVs[6], ShinyXOR, PassIVs}
+
+            // char* cstr = strings[3];
+            std::istringstream ss;
+            ss = std::istringstream(strings[3]);
+            ss >> ShinyXOR;
 
             if (TIDSIDSearch) {
                 ShinyXOR = 0;
@@ -218,11 +219,13 @@ public:
             int Animation = Xoroshiro(go.state0, go.state1).Next() % 2;
             std::ostringstream sout;
             // Passes all filters!
-            sout << std::setfill(' ') << std::setw(6) << advance + InitialAdvances;
+            sout << std::setfill(' ') << std::setw(6)
+                 << advance + InitialAdvances;
             Results.push_back(sout.str()); // Frame
             sout.str("");
             sout.clear();
-            sout << std::setfill('0') << std::setw(4) << (((MockPID >> 16) ^ (MockPID & 0xFFFF)) >> 4);
+            sout << std::setfill('0') << std::setw(4)
+                 << (((MockPID >> 16) ^ (MockPID & 0xFFFF)) >> 4);
             Results.push_back(sout.str()); // TSV
             sout.str("");
             sout.clear();
@@ -307,7 +310,6 @@ public:
                 "PumpedUp",  "ZeroEnergy",   "Prideful", "Unsure",  "Humble",
                 "Thorny",    "Vigor",        "Slump"};
         for (int i = 0; i < MarkRolls; i++) {
-            // cout << "start mark" << endl;
             unsigned int rare = (unsigned int)go->Rand(1000);
             unsigned int pers = (unsigned int)go->Rand(100);
             unsigned int unco = (unsigned int)go->Rand(50);
@@ -318,7 +320,6 @@ public:
             if (rare == 0)
                 return "Rare";
             if (pers == 0) {
-                // cout << "personal mark" << endl;
                 return PersonalityMarks[go->Rand(28)];
             }
             if (unco == 0)
@@ -329,7 +330,6 @@ public:
                 return "Time";
             if (fish == 0 && Fishing)
                 return "Fish";
-            // cout << "end mark" << endl;
         }
         return "None";
     }
@@ -387,21 +387,21 @@ public:
             }
         }
 
-        string iv;
+        string             iv;
         std::ostringstream sout;
         for (i = 0; i < 6; i++) {
             sout << std::setfill(' ') << std::setw(2) << IVs[i];
             iv += sout.str();
             sout.str("");
             sout.clear();
-            if(i!=5){
+            if (i != 5) {
                 iv += "-";
             }
         }
 
         vector<string> result;
 
-        long         ShinyXOR = GetTSV(FixedPID >> 16, FixedPID & 0xFFFF) ^ TSV;
+        long ShinyXOR = GetTSV(FixedPID >> 16, FixedPID & 0xFFFF) ^ TSV;
         stringstream ec;
         ec << hex << FixedEC;
         result.push_back(ec.str());
