@@ -11,34 +11,34 @@
     tools:context=".Settings">
 
     <TextView
+        android:id="@+id/settingAboutLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="About"
+        android:text="@string/settingAboutLabel"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/Language"
+        android:id="@+id/settingAbout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:autoLink="web"
         android:minHeight="48dp"
-        android:text="https://github.com/IPA989/SwShOverWorldRNGTool" />
+        android:text="@string/settingAbout" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/LicensesLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Licenses"
+        android:text="@string/LicensesLabel"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/Licenses"
+        android:layout_marginTop="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autoLink="web"
-android:text="
-GNU General Public License v3.0\nhttps://github.com/IPA989/SwShOverWorldRNGTool/blob/main/LICENSE\n
-MIT License\nhttps://github.com/IPA989/SwShOverWorldRNGTool/blob/main/Licenses/MITLICENSE" />
+android:text="@string/Licenses" />
 
 </LinearLayout>

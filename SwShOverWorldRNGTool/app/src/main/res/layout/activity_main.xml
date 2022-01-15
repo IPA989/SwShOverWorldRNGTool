@@ -20,19 +20,19 @@
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="80dp"
+                android:layout_marginEnd="80dp"
                 android:gravity="center"
                 android:minHeight="?actionBarSize"
                 android:padding="@dimen/appbar_padding"
-                android:text="SwSh OWRNG"
+                android:text="@string/swsh_owrng"
                 android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
                 android:onClick="onclickSetting"
                 app:srcCompat="@drawable/settings_launcher_foreground"
                 tools:ignore="SpeakableTextPresentCheck" />

@@ -19,7 +19,7 @@
         <LinearLayout
             android:id="@+id/RelativeLayout1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginRight="8dp"
@@ -61,7 +61,8 @@
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:text="@string/state"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:autofillHints="" />
 
             <TextView
                 android:id="@+id/state1"
@@ -79,17 +80,17 @@
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:text="@string/state"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:autofillHints="" />
 
             <Button
                 android:id="@+id/stateSearch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="0dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/purple_200"
                 android:onClick="onclickState"
-                android:text="State"
+                android:text="@string/stateSearchButton"
                 android:textSize="12sp" />
 
             <LinearLayout
@@ -106,7 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Advances range:" />
+                android:text="@string/advancesLabel" />
 
             <EditText
                 android:id="@+id/advmin"
@@ -115,9 +116,10 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
-                android:text="0"
+                android:text="@string/advMin"
                 android:textSize="12sp"
-                tools:ignore="TouchTargetSizeCheck" />
+                tools:ignore="TouchTargetSizeCheck"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/advmax"
@@ -127,53 +129,56 @@
                 android:ems="10"
                 android:inputType="number"
                 android:minHeight="48dp"
-                android:text="1000"
-                android:textSize="12sp" />
+                android:text="@string/advMax"
+                android:textSize="12sp"
+                android:autofillHints="" />
 
             <TextView
                 android:id="@+id/tsvLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TSV:" />
+                android:text="@string/tsvLabel" />
 
             <EditText
                 android:id="@+id/tsv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:ems="4"
                 android:inputType="number"
                 android:minHeight="48dp"
-                android:text="1234"
-                android:textSize="12sp" />
+                android:text="@string/tsv"
+                android:textSize="12sp"
+                android:autofillHints="" />
 
             <TextView
                 android:id="@+id/trvLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TRV:" />
+                android:text="@string/trvLabel" />
 
             <EditText
                 android:id="@+id/trv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:ems="1"
                 android:inputType="number"
                 android:minHeight="48dp"
-                android:text="1"
-                android:textSize="12sp" />
+                android:text="@string/trv"
+                android:textSize="12sp"
+                android:autofillHints="" />
 
             <CheckBox
                 android:id="@+id/shinycharm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Shiny Charm"
+                android:text="@string/shinyCharm"
                 android:textSize="14sp" />
 
 
@@ -183,7 +188,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Mark Charm"
+                android:text="@string/markCharm"
                 android:textSize="14sp" />
 
             <TextView
@@ -191,7 +196,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Mark:" />
+                android:text="@string/markLabel" />
 
             <EditText
                 android:id="@+id/desiredMark"
@@ -201,14 +206,15 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:text="Ignore" />
+                android:text="@string/Ignore"
+                android:autofillHints="" />
 
             <TextView
                 android:id="@+id/ShinyLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Shiny:" />
+                android:text="@string/ShinyLabel" />
 
             <EditText
                 android:id="@+id/desiredShiny"
@@ -217,14 +223,16 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Ignore" />
+                android:minHeight="48dp"
+                android:text="@string/Ignore"
+                android:autofillHints="" />
 
             <TextView
                 android:id="@+id/natureLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Nature:" />
+                android:text="@string/natureLabel" />
 
             <EditText
                 android:id="@+id/desiredNature"
@@ -234,14 +242,15 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:text="Ignore" />
+                android:text="@string/Ignore"
+                android:autofillHints="" />
 
             <CheckBox
                 android:id="@+id/cutecharm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Cute Charm"
+                android:text="@string/cuteCharm"
                 android:textSize="14sp" />
 
             <CheckBox
@@ -250,7 +259,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:checked="false"
-                android:text="Weather"
+                android:text="@string/weather"
                 android:textSize="14sp" />
 
             <CheckBox
@@ -258,7 +267,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Random held item"
+                android:text="@string/randomItem"
                 android:textSize="14sp" />
 
             <CheckBox
@@ -266,7 +275,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Fishing"
+                android:text="@string/fishing"
                 android:textSize="14sp" />
 
             <CheckBox
@@ -274,7 +283,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ability Locked"
+                android:text="@string/isAbilityLocked"
                 android:textSize="14sp" />
 
             <CheckBox
@@ -282,7 +291,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Legendary"
+                android:text="@string/legendary"
                 android:textSize="14sp" />
 
             <CheckBox
@@ -290,7 +299,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Static"
+                android:text="@string/staticCheck"
                 android:textSize="14sp" />
 
             <CheckBox
@@ -298,7 +307,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TSV Search"
+                android:text="@string/TSVSearch"
                 android:textSize="14sp" />
 
             <TextView
@@ -306,43 +315,45 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="HP:" />
+                android:text="@string/hp" />
 
             <LinearLayout
                 android:id="@+id/hpLine"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="48dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/hmin"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:autofillHints=""
                     android:ems="2"
                     android:inputType="number"
-                    android:text="0"
-                    android:textSize="10sp" />
+                    android:text="@string/IVsMin"
+                    android:textSize="11sp" />
 
                 <TextView
-                    android:id="@+id/hihun2"
+                    android:id="@+id/hyphen2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="-"
+                    android:text="@string/hyphen"
                     android:textAlignment="center" />
 
                 <EditText
                     android:id="@+id/hmax"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="130dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="130dp"
                     android:layout_weight="1"
+                    android:autofillHints=""
                     android:ems="2"
                     android:inputType="number"
-                    android:text="31"
-                    android:textSize="10sp" />
+                    android:text="@string/IVsMax"
+                    android:textSize="11sp" />
 
             </LinearLayout>
 
@@ -351,7 +362,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Atk:" />
+                android:text="@string/atk" />
 
             <LinearLayout
                 android:id="@+id/AtkLine"
@@ -363,31 +374,33 @@
                 <EditText
                     android:id="@+id/amin"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_weight="1"
+                    android:autofillHints=""
                     android:ems="2"
                     android:inputType="number"
-                    android:text="0"
-                    android:textSize="10sp" />
+                    android:text="@string/IVsMin"
+                    android:textSize="11sp" />
 
                 <TextView
-                    android:id="@+id/hihun3"
+                    android:id="@+id/hyphen3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="-"
+                    android:text="@string/hyphen"
                     android:textAlignment="center" />
 
                 <EditText
                     android:id="@+id/amax"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="130dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="130dp"
                     android:layout_weight="1"
+                    android:autofillHints=""
                     android:ems="2"
                     android:inputType="number"
-                    android:text="31"
-                    android:textSize="10sp" />
+                    android:text="@string/IVsMax"
+                    android:textSize="11sp" />
 
             </LinearLayout>
 
@@ -396,7 +409,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Def:" />
+                android:text="@string/def" />
 
             <LinearLayout
                 android:id="@+id/DefLine"
@@ -408,31 +421,33 @@
                 <EditText
                     android:id="@+id/bmin"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_weight="1"
+                    android:autofillHints=""
                     android:ems="2"
                     android:inputType="number"
-                    android:text="0"
-                    android:textSize="10sp" />
+                    android:text="@string/IVsMin"
+                    android:textSize="11sp" />
 
                 <TextView
-                    android:id="@+id/hihun4"
+                    android:id="@+id/hyphen4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="-"
+                    android:text="@string/hyphen"
                     android:textAlignment="center" />
 
                 <EditText
                     android:id="@+id/bmax"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="130dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="130dp"
                     android:layout_weight="1"
+                    android:autofillHints=""
                     android:ems="2"
                     android:inputType="number"
-                    android:text="31"
-                    android:textSize="10sp" />
+                    android:text="@string/IVsMax"
+                    android:textSize="11sp" />
 
             </LinearLayout>
 
@@ -441,7 +456,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="SpA:" />
+                android:text="@string/spa" />
 
             <LinearLayout
                 android:id="@+id/SpALine"
@@ -453,31 +468,33 @@
                 <EditText
                     android:id="@+id/cmin"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_weight="1"
+                    android:autofillHints=""
                     android:ems="2"
                     android:inputType="number"
-                    android:text="0"
-                    android:textSize="10sp" />
+                    android:text="@string/IVsMin"
+                    android:textSize="11sp" />
 
                 <TextView
-                    android:id="@+id/hihun5"
+                    android:id="@+id/hyphen5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="-"
+                    android:text="@string/hyphen"
                     android:textAlignment="center" />
 
                 <EditText
                     android:id="@+id/cmax"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="130dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="130dp"
                     android:layout_weight="1"
                     android:ems="2"
                     android:inputType="number"
-                    android:text="31"
-                    android:textSize="10sp" />
+                    android:text="@string/IVsMax"
+                    android:textSize="11sp"
+                    android:autofillHints="" />
 
             </LinearLayout>
 
@@ -486,7 +503,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="SpD:" />
+                android:text="@string/spd" />
 
             <LinearLayout
                 android:id="@+id/SpDLine"
@@ -498,31 +515,33 @@
                 <EditText
                     android:id="@+id/dmin"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_weight="1"
+                    android:autofillHints=""
                     android:ems="2"
                     android:inputType="number"
-                    android:text="0"
-                    android:textSize="10sp" />
+                    android:text="@string/IVsMin"
+                    android:textSize="11sp" />
 
                 <TextView
-                    android:id="@+id/hihun6"
+                    android:id="@+id/hyphen6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="-"
+                    android:text="@string/hyphen"
                     android:textAlignment="center" />
 
                 <EditText
                     android:id="@+id/dmax"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="130dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="130dp"
                     android:layout_weight="1"
+                    android:autofillHints=""
                     android:ems="2"
                     android:inputType="number"
-                    android:text="31"
-                    android:textSize="10sp" />
+                    android:text="@string/IVsMax"
+                    android:textSize="11sp" />
 
             </LinearLayout>
 
@@ -531,7 +550,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Spe:" />
+                android:text="@string/spe" />
 
             <LinearLayout
                 android:id="@+id/SpeLine"
@@ -544,31 +563,33 @@
                 <EditText
                     android:id="@+id/smin"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_weight="1"
+                    android:autofillHints=""
                     android:ems="2"
                     android:inputType="number"
-                    android:text="0"
-                    android:textSize="10sp" />
+                    android:text="@string/IVsMin"
+                    android:textSize="11sp" />
 
                 <TextView
-                    android:id="@+id/hihun7"
+                    android:id="@+id/hyphen7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="-"
+                    android:text="@string/hyphen"
                     android:textAlignment="center" />
 
                 <EditText
                     android:id="@+id/smax"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="130dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="130dp"
                     android:layout_weight="1"
+                    android:autofillHints=""
                     android:ems="2"
                     android:inputType="number"
-                    android:text="31"
-                    android:textSize="10sp" />
+                    android:text="@string/IVsMax"
+                    android:textSize="11sp" />
 
             </LinearLayout>
 
@@ -577,7 +598,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Slot:" />
+                android:text="@string/slot" />
 
             <LinearLayout
                 android:id="@+id/slotLine"
@@ -589,31 +610,33 @@
                 <EditText
                     android:id="@+id/SlotMin"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_weight="1"
                     android:ems="2"
                     android:inputType="number"
-                    android:text="0"
-                    android:textSize="10sp"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    android:text="@string/IVsMin"
+                    android:textSize="11sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    android:autofillHints="" />
 
                 <TextView
-                    android:id="@+id/hihun8"
+                    android:id="@+id/hyphen8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="-"
+                    android:text="@string/hyphen"
                     android:textAlignment="center" />
 
                 <EditText
                     android:id="@+id/SlotMax"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_weight="1"
                     android:ems="3"
                     android:inputType="number"
-                    android:text="99"
-                    android:textSize="10sp" />
+                    android:text="@string/slotMax"
+                    android:textSize="11sp"
+                    android:autofillHints="" />
             </LinearLayout>
 
             <TextView
@@ -621,7 +644,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Level:" />
+                android:text="@string/level" />
 
             <LinearLayout
                 android:id="@+id/LevelLine"
@@ -633,48 +656,51 @@
                 <EditText
                     android:id="@+id/LvMin"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_weight="1"
                     android:ems="2"
                     android:inputType="number"
-                    android:text="0"
-                    android:textSize="10sp"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    android:text="@string/LvMin"
+                    android:textSize="11sp"
+                    tools:ignore="TouchTargetSizeCheck"
+                    android:autofillHints="" />
 
                 <TextView
-                    android:id="@+id/hihunl"
+                    android:id="@+id/hyphenL"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="-"
+                    android:text="@string/hyphen"
                     android:textAlignment="center" />
 
                 <EditText
                     android:id="@+id/LvMax"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:layout_weight="1"
+                    android:autofillHints=""
                     android:ems="3"
                     android:inputType="number"
-                    android:text="0"
-                    android:textSize="10sp" />
+                    android:text="@string/LvMax"
+                    android:textSize="11sp" />
             </LinearLayout>
 
             <TextView
-                android:id="@+id/KOlabel"
+                android:id="@+id/KOLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="KOs:" />
+                android:text="@string/kosLabel" />
 
             <EditText
                 android:id="@+id/KOs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
+                android:autofillHints=""
                 android:ems="2"
                 android:inputType="number"
-                android:text="0"
-                android:textSize="10sp"
+                android:text="@string/KOs"
+                android:textSize="11sp"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <Button
@@ -685,7 +711,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/purple_500"
                 android:onClick="onclickMainSearch"
-                android:text="Search"
+                android:text="@string/searchButton"
                 android:textSize="20sp" />
 
         </LinearLayout>

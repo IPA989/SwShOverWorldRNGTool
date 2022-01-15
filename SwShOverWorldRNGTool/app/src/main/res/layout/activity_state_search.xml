@@ -27,11 +27,11 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/stateSearchLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="state search   0:Physical, 1:Special"
+        android:text="@string/stateSearchLabel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:autofillHints="Atk=0, Spa=1"
                 android:ems="128"
-                android:hint="motion"
+                android:hint="@string/motion"
                 android:inputType="number"
                 android:minHeight="48dp"
                 android:text="" />
@@ -55,14 +55,14 @@
                     android:id="@+id/motioncountLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/motioncountLabel" />
+                    android:text="@string/motionCountLabel" />
 
                 <TextView
                     android:id="@+id/motioncount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/motioncount" />
+                    android:text="@string/motionCount" />
             </LinearLayout>
 
             <TextView
@@ -107,15 +107,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onclickSearch0"
-                    android:text="Search" />
+                    android:text="@string/searchButton" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/stateOKButton0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
                     android:onClick="onclickOK0"
-                    android:text="OK" />
+                    android:text="@string/OKButton" />
             </LinearLayout>
 
             <TextView
@@ -123,7 +123,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Advances search" />
+                android:text="@string/denStateSearch" />
 
             <EditText
                 android:id="@+id/motionSpace1"
@@ -131,36 +131,36 @@
                 android:layout_height="wrap_content"
                 android:autofillHints="Atk=0, Spa=1"
                 android:ems="10"
-                android:hint="motion"
+                android:hint="@string/motion"
                 android:inputType="number"
                 android:minHeight="48dp"
                 android:text="" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/searchRange"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Search range" />
+                android:text="@string/search_range" />
 
             <EditText
                 android:id="@+id/stateSearchMin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="min"
                 android:inputType="number"
                 android:minHeight="48dp"
-                android:text="0" />
+                android:text="@string/stateSearchMin"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/stateSearchMax"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="max"
                 android:inputType="number"
                 android:minHeight="48dp"
-                android:text="1000" />
+                android:text="@string/stateSearchMax"
+                android:autofillHints="" />
 
             <TextView
                 android:id="@+id/state0"
@@ -198,7 +198,7 @@
                 android:id="@+id/frameResult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="[F]: 0, resultCount: 0" />
+                android:text="@string/frameResult" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -209,16 +209,16 @@
                     android:id="@+id/searchButton1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="8dp"
+                    android:layout_marginEnd="8dp"
                     android:onClick="onclickSearch1"
-                    android:text="search" />
+                    android:text="@string/searchButton" />
 
                 <Button
-                    android:id="@+id/button6"
+                    android:id="@+id/stateOKButton1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onclickOK1"
-                    android:text="OK" />
+                    android:text="@string/OKButton" />
             </LinearLayout>
 
         </LinearLayout>
