@@ -34,13 +34,15 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="8dp"
                 android:onClick="onclickSetting"
-                app:srcCompat="@drawable/settings_launcher_foreground" />
+                app:srcCompat="@drawable/settings_launcher_foreground"
+                tools:ignore="SpeakableTextPresentCheck" />
         </LinearLayout>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -48,6 +50,7 @@
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

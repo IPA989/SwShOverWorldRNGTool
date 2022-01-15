@@ -41,8 +41,9 @@
                 android:layout_height="wrap_content"
                 android:autofillHints="Atk=0, Spa=1"
                 android:ems="128"
-                android:inputType="number"
                 android:hint="motion"
+                android:inputType="number"
+                android:minHeight="48dp"
                 android:text="" />
 
             <LinearLayout
@@ -130,8 +131,9 @@
                 android:layout_height="wrap_content"
                 android:autofillHints="Atk=0, Spa=1"
                 android:ems="10"
-                android:inputType="number"
                 android:hint="motion"
+                android:inputType="number"
+                android:minHeight="48dp"
                 android:text="" />
 
             <TextView
@@ -145,8 +147,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="number"
                 android:hint="min"
+                android:inputType="number"
+                android:minHeight="48dp"
                 android:text="0" />
 
             <EditText
@@ -156,6 +159,7 @@
                 android:ems="10"
                 android:hint="max"
                 android:inputType="number"
+                android:minHeight="48dp"
                 android:text="1000" />
 
             <TextView

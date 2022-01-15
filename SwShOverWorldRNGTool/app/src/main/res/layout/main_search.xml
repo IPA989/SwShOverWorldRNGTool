@@ -59,6 +59,7 @@
                 android:layout_weight="1"
                 android:ems="8"
                 android:inputType="textPersonName"
+                android:minHeight="48dp"
                 android:text="@string/state"
                 android:textSize="12sp" />
 
@@ -76,6 +77,7 @@
                 android:layout_weight="1"
                 android:ems="8"
                 android:inputType="textPersonName"
+                android:minHeight="48dp"
                 android:text="@string/state"
                 android:textSize="12sp" />
 
@@ -100,11 +102,11 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/hani"
+                android:id="@+id/advancesLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Adv:" />
+                android:text="Advances range:" />
 
             <EditText
                 android:id="@+id/advmin"
@@ -124,6 +126,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="number"
+                android:minHeight="48dp"
                 android:text="1000"
                 android:textSize="12sp" />
 
@@ -141,7 +144,8 @@
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
                 android:ems="4"
-                android:inputType="textPersonName"
+                android:inputType="number"
+                android:minHeight="48dp"
                 android:text="1234"
                 android:textSize="12sp" />
 
@@ -159,7 +163,8 @@
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
                 android:ems="1"
-                android:inputType="textPersonName"
+                android:inputType="number"
+                android:minHeight="48dp"
                 android:text="1"
                 android:textSize="12sp" />
 
@@ -181,17 +186,6 @@
                 android:text="Mark Charm"
                 android:textSize="14sp" />
 
-            <Button
-                android:id="@+id/search"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/purple_500"
-                android:onClick="onclickMainSearch"
-                android:text="Search"
-                android:textSize="20sp" />
-
             <TextView
                 android:id="@+id/markLabel"
                 android:layout_width="match_parent"
@@ -206,6 +200,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
+                android:minHeight="48dp"
                 android:text="Ignore" />
 
             <TextView
@@ -238,6 +233,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
+                android:minHeight="48dp"
                 android:text="Ignore" />
 
             <CheckBox
@@ -246,8 +242,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Cute Charm"
-                android:textSize="14sp"
-                android:visibility="gone" />
+                android:textSize="14sp" />
 
             <CheckBox
                 android:id="@+id/weather"
@@ -681,6 +676,17 @@
                 android:text="0"
                 android:textSize="10sp"
                 tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/purple_500"
+                android:onClick="onclickMainSearch"
+                android:text="Search"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
