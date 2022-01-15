@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -212,14 +214,22 @@ public class MainActivity extends AppCompatActivity {
         CheckBox tsvsearch = findViewById(R.id.TSVsearch);
         boolean TSVSearch       = tsvsearch.isChecked();
 
-        EditText desiredmark = findViewById(R.id.desiredMark);
-        EditText desiredshiny = findViewById(R.id.desiredShiny);
-        EditText desirednature = findViewById(R.id.desiredNature);
-
-        String DesiredMark   = desiredmark.getText().toString();
-        String DesiredShiny  = desiredshiny.getText().toString();
+//        String DesiredMark  = "Ignore";
 //        String DesiredShiny  = "Ignore";
-        String DesiredNature = desirednature.getText().toString();
+        String DesiredNature = "Ignore";
+
+        RadioGroup desiredmark = findViewById(R.id.MarkRadio);
+        RadioGroup desiredshiny = findViewById(R.id.ShinyRadio);
+
+
+
+        int checkedId   = desiredmark.getCheckedRadioButtonId();
+        RadioButton radioButton = (RadioButton) findViewById(checkedId);
+        String DesiredMark = radioButton.getText().toString();
+
+        checkedId  = desiredshiny.getCheckedRadioButtonId();
+        radioButton = (RadioButton) findViewById(checkedId);
+        String DesiredShiny = radioButton.getText().toString();
 
 
         if(LevelMax < LevelMin || SlotMax < SlotMin){

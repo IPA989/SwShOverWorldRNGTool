@@ -118,7 +118,6 @@
                 android:inputType="number"
                 android:text="@string/advMin"
                 android:textSize="12sp"
-                tools:ignore="TouchTargetSizeCheck"
                 android:autofillHints="" />
 
             <EditText
@@ -198,16 +197,42 @@
                 android:layout_weight="1"
                 android:text="@string/markLabel" />
 
-            <EditText
-                android:id="@+id/desiredMark"
+            <RadioGroup
+                android:id="@+id/MarkRadio"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:text="@string/Ignore"
-                android:autofillHints="" />
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radioButton5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/Ignore" />
+
+                <RadioButton
+                    android:id="@+id/radioButton7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="None" />
+
+                <RadioButton
+                    android:id="@+id/radioButton6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Any Mark" />
+
+                <RadioButton
+                    android:id="@+id/radioButton8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Any Personality" />
+
+                <RadioButton
+                    android:id="@+id/radioButton9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rare" />
+            </RadioGroup>
 
             <TextView
                 android:id="@+id/ShinyLabel"
@@ -216,22 +241,43 @@
                 android:layout_weight="1"
                 android:text="@string/ShinyLabel" />
 
-            <EditText
-                android:id="@+id/desiredShiny"
+            <RadioGroup
+                android:id="@+id/ShinyRadio"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:text="@string/Ignore"
-                android:autofillHints="" />
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/Ignore" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Square" />
+
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Star" />
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Star/Square" />
+            </RadioGroup>
 
             <TextView
                 android:id="@+id/natureLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:visibility="gone"
                 android:text="@string/natureLabel" />
 
             <EditText
@@ -239,6 +285,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:visibility="gone"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
@@ -616,7 +663,6 @@
                     android:inputType="number"
                     android:text="@string/IVsMin"
                     android:textSize="11sp"
-                    tools:ignore="TouchTargetSizeCheck"
                     android:autofillHints="" />
 
                 <TextView
@@ -662,7 +708,6 @@
                     android:inputType="number"
                     android:text="@string/LvMin"
                     android:textSize="11sp"
-                    tools:ignore="TouchTargetSizeCheck"
                     android:autofillHints="" />
 
                 <TextView
@@ -700,8 +745,7 @@
                 android:ems="2"
                 android:inputType="number"
                 android:text="@string/KOs"
-                android:textSize="11sp"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:textSize="11sp" />
 
             <Button
                 android:id="@+id/search"
