@@ -175,17 +175,21 @@ public class State_Search extends AppCompatActivity {
     }
 
 
+//    @Override
+//    public void onBackPressed(){
+//        super.onBackPressed();
+//        Intent intent = getIntent();
+//        String message0 = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+//        String message1 = intent.getStringExtra(MainActivity.EXTRA_MESSAGE1);
+//        Intent replyIntent = new Intent();
+//        replyIntent.putExtra(EXTRA_REPLY, message0)
+//                .putExtra(EXTRA_REPLY1, message1);
+//        setResult(RESULT_OK,replyIntent);
+//        finish();
+//    }
+
     @Override
-    public void onBackPressed(){
-        super.onBackPressed();
-        Intent intent = getIntent();
-        String message0 = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        String message1 = intent.getStringExtra(MainActivity.EXTRA_MESSAGE1);
-        Intent replyIntent = new Intent();
-        replyIntent.putExtra(EXTRA_REPLY, message0)
-                .putExtra(EXTRA_REPLY1, message1);
-        setResult(RESULT_OK,replyIntent);
-        finish();
+    public void onBackPressed() {
     }
 
 }
