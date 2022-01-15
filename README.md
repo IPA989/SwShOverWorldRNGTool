@@ -12,7 +12,7 @@ Download .apk file and install.
 
 # Requirement
 
-Android 7.0.4
+Android 7.0
 
 # Credit
 
