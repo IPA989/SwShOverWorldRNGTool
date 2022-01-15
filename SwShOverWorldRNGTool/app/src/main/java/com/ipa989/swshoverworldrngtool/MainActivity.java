@@ -9,6 +9,7 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -124,6 +125,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void onclickMainSearch(View view) {
 
+        boolean search = true;
+
+        Button searchButton = findViewById(R.id.search);
+//        searchButton.setText("Searching");
+
         EditText st0 = findViewById(R.id.s0);
         String s0 = st0.getText().toString();
         EditText st1 = findViewById(R.id.s1);
@@ -144,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
         boolean ShinyCharm = shiny.isChecked();
         boolean MarkCharm  = mark.isChecked();
         boolean Weather    = weather.isChecked();
-        CheckBox isStatic = findViewById(R.id.statickcheck);
+        CheckBox isStatic = findViewById(R.id.staticCheck);
         boolean Static     = isStatic.isChecked();
 
         CheckBox fishing = findViewById(R.id.fishing);
@@ -192,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
         MinIVs[5] = Integer.parseInt(smin.getText().toString());
         MaxIVs[5] = Integer.parseInt(smax.getText().toString());
 
-        CheckBox ability = findViewById(R.id.isabilitylocked);
+        CheckBox ability = findViewById(R.id.isAbilityLocked);
 //        EditText EggMoveCount = findViewById(R.id.EggMoveCount);
         EditText kos = findViewById(R.id.KOs);
 
@@ -211,11 +217,11 @@ public class MainActivity extends AppCompatActivity {
         boolean IsShinyLocked   = false;
         CheckBox cutecharm = findViewById(R.id.cutecharm);
         boolean IsCuteCharm     = cutecharm.isChecked();
-        CheckBox tsvsearch = findViewById(R.id.TSVsearch);
-        boolean TSVSearch       = tsvsearch.isChecked();
+//        CheckBox tsvsearch = findViewById(R.id.TSVsearch);
+//        boolean TSVSearch       = tsvsearch.isChecked();
 
-//        String DesiredMark  = "Ignore";
-//        String DesiredShiny  = "Ignore";
+        boolean TSVSearch = false;
+
         String DesiredNature = "Ignore";
 
         RadioGroup desiredmark = findViewById(R.id.MarkRadio);
@@ -232,16 +238,34 @@ public class MainActivity extends AppCompatActivity {
         String DesiredShiny = radioButton.getText().toString();
 
 
-        if(LevelMax < LevelMin || SlotMax < SlotMin){
+//        Check input error
+
+        if(
+                MaxAdv > 100000000 ||
+                TSV > 4096 ||
+                TRV >= 16 ||
+                LevelMax > 100 ||
+                SlotMax > 100 ||
+                LevelMax < LevelMin ||
+                SlotMax < SlotMin
+        ){
+            search = false;
+        }
+
+
+
+        for(int i=0; i<6; i++){
+            if(MaxIVs[i] < MinIVs[i]){
+                search = false;
+            }
+        }
+
+        if(!search){
             toastError();
             return;
         }
-        for(int i=0; i<6; i++){
-            if(MaxIVs[i] < MinIVs[i]){
-                toastError();
-                return;
-            }
-        }
+
+
 
         // call to a native method
         TextView tv = findViewById(R.id.resultView);
@@ -251,6 +275,7 @@ public class MainActivity extends AppCompatActivity {
                 DesiredNature, LevelMin, LevelMax, SlotMin, SlotMax, MinIVs, MaxIVs,
                 IsAbilityLocked, EggMoveCount, KOs, FlawlessIVs, IsCuteCharm,
                 IsShinyLocked, TSVSearch);
+
 
 //        String Result = stringFromJNI();
         if(Result != null) {

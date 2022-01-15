@@ -49,7 +49,7 @@ public:
 
 //        unsigned int TSV = GetTSV(TID, SID);
         int TIDSID = (TSV << 4) + TRV;
-        int maxView = 100;
+        int maxView = 10000;
         unsigned int IVs[6];
         bool         GenerateLevel = (LevelMin != LevelMax);
         unsigned int LevelDelta    = LevelMax - LevelMin + 1;
@@ -72,8 +72,8 @@ public:
             go.Next();
         }
 
-//        while (advance < advances & results < maxView) {
-        while (advance < advances) {
+        while (advance < advances & results < maxView) {
+//        while (advance < advances) {
 
             // Init new RNG
             Xoroshiro rng(go.state0, go.state1);
@@ -285,6 +285,7 @@ public:
                 go.Next();
             advance += 1;
             results++;
+            maxView++;
         }
 
         return Results;

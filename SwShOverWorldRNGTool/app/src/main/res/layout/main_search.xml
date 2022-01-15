@@ -57,7 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:ems="8"
+                android:maxLength="16"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:text="@string/state"
@@ -76,7 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:ems="8"
+                android:maxLength="16"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:text="@string/state"
@@ -115,6 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
+                android:maxLength="9"
                 android:inputType="number"
                 android:text="@string/advMin"
                 android:textSize="12sp"
@@ -126,6 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
+                android:maxLength="9"
                 android:inputType="number"
                 android:minHeight="48dp"
                 android:text="@string/advMax"
@@ -146,6 +148,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:ems="4"
+                android:maxLength="4"
                 android:inputType="number"
                 android:minHeight="48dp"
                 android:text="@string/tsv"
@@ -166,6 +169,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:ems="1"
+                android:maxLength="1"
                 android:inputType="number"
                 android:minHeight="48dp"
                 android:text="@string/trv"
@@ -326,7 +330,7 @@
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/isabilitylocked"
+                android:id="@+id/isAbilityLocked"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -342,7 +346,7 @@
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/statickcheck"
+                android:id="@+id/staticCheck"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -350,10 +354,11 @@
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/TSVsearch"
+                android:id="@+id/TSVSearch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:visibility="gone"
                 android:text="@string/TSVSearch"
                 android:textSize="14sp" />
 
@@ -378,6 +383,7 @@
                     android:layout_weight="1"
                     android:autofillHints=""
                     android:ems="2"
+                    android:maxLength="2"
                     android:inputType="number"
                     android:text="@string/IVsMin"
                     android:textSize="11sp" />
@@ -398,6 +404,7 @@
                     android:layout_weight="1"
                     android:autofillHints=""
                     android:ems="2"
+                    android:maxLength="2"
                     android:inputType="number"
                     android:text="@string/IVsMax"
                     android:textSize="11sp" />
@@ -425,6 +432,7 @@
                     android:layout_weight="1"
                     android:autofillHints=""
                     android:ems="2"
+                    android:maxLength="2"
                     android:inputType="number"
                     android:text="@string/IVsMin"
                     android:textSize="11sp" />
@@ -445,6 +453,7 @@
                     android:layout_weight="1"
                     android:autofillHints=""
                     android:ems="2"
+                    android:maxLength="2"
                     android:inputType="number"
                     android:text="@string/IVsMax"
                     android:textSize="11sp" />
@@ -472,6 +481,7 @@
                     android:layout_weight="1"
                     android:autofillHints=""
                     android:ems="2"
+                    android:maxLength="2"
                     android:inputType="number"
                     android:text="@string/IVsMin"
                     android:textSize="11sp" />
@@ -492,6 +502,7 @@
                     android:layout_weight="1"
                     android:autofillHints=""
                     android:ems="2"
+                    android:maxLength="2"
                     android:inputType="number"
                     android:text="@string/IVsMax"
                     android:textSize="11sp" />
@@ -519,6 +530,7 @@
                     android:layout_weight="1"
                     android:autofillHints=""
                     android:ems="2"
+                    android:maxLength="2"
                     android:inputType="number"
                     android:text="@string/IVsMin"
                     android:textSize="11sp" />
@@ -538,6 +550,7 @@
                     android:layout_marginEnd="130dp"
                     android:layout_weight="1"
                     android:ems="2"
+                    android:maxLength="2"
                     android:inputType="number"
                     android:text="@string/IVsMax"
                     android:textSize="11sp"
@@ -566,6 +579,7 @@
                     android:layout_weight="1"
                     android:autofillHints=""
                     android:ems="2"
+                    android:maxLength="2"
                     android:inputType="number"
                     android:text="@string/IVsMin"
                     android:textSize="11sp" />
@@ -586,6 +600,7 @@
                     android:layout_weight="1"
                     android:autofillHints=""
                     android:ems="2"
+                    android:maxLength="2"
                     android:inputType="number"
                     android:text="@string/IVsMax"
                     android:textSize="11sp" />
@@ -614,6 +629,7 @@
                     android:layout_weight="1"
                     android:autofillHints=""
                     android:ems="2"
+                    android:maxLength="2"
                     android:inputType="number"
                     android:text="@string/IVsMin"
                     android:textSize="11sp" />
@@ -634,6 +650,7 @@
                     android:layout_weight="1"
                     android:autofillHints=""
                     android:ems="2"
+                    android:maxLength="2"
                     android:inputType="number"
                     android:text="@string/IVsMax"
                     android:textSize="11sp" />
@@ -660,6 +677,7 @@
                     android:layout_height="48dp"
                     android:layout_weight="1"
                     android:ems="2"
+                    android:maxLength="2"
                     android:inputType="number"
                     android:text="@string/IVsMin"
                     android:textSize="11sp"
@@ -679,6 +697,7 @@
                     android:layout_height="48dp"
                     android:layout_weight="1"
                     android:ems="3"
+                    android:maxLength="2"
                     android:inputType="number"
                     android:text="@string/slotMax"
                     android:textSize="11sp"
@@ -705,6 +724,7 @@
                     android:layout_height="48dp"
                     android:layout_weight="1"
                     android:ems="2"
+                    android:maxLength="2"
                     android:inputType="number"
                     android:text="@string/LvMin"
                     android:textSize="11sp"
@@ -725,6 +745,7 @@
                     android:layout_weight="1"
                     android:autofillHints=""
                     android:ems="3"
+                    android:maxLength="2"
                     android:inputType="number"
                     android:text="@string/LvMax"
                     android:textSize="11sp" />
@@ -743,6 +764,7 @@
                 android:layout_height="48dp"
                 android:autofillHints=""
                 android:ems="2"
+                android:maxLength="4"
                 android:inputType="number"
                 android:text="@string/KOs"
                 android:textSize="11sp" />
