@@ -26,13 +26,26 @@ Java_com_ipa989_swshoverworldrngtool_MainActivity_resultFromJNI(
     std::string resultLabel[] = {"[F]", "TSV", "   Shiny", "       Mark", "IVs(HABCDS)", "Ability", "Gender", "Nature", "Lv", "Slot", "PID", "EC", "Brilliant", "  s0", "  s1", "Motion"};
     bool output[]             = {true, false, true, true, true, true, true, true, true, true, true, true, false, true, true, true};
 
+    // 16進数変換
+
     const char *cstr0 = env->GetStringUTFChars(state0, NULL);
     std::string s0 = std::string(cstr0, 16);
     const char *cstr1 = env->GetStringUTFChars(state1, NULL);
     std::string s1 = std::string(cstr1, 16);
 
-    unsigned long long st0 = stoll(s0, nullptr, 16);
-    unsigned long long st1 = stoll(s1, nullptr, 16);
+    unsigned long long st0 = 1;
+    unsigned long long st1 = 1;
+
+    try {
+        st0 = stoll(s0, nullptr, 16);
+        st1 = stoll(s1, nullptr, 16);
+    }
+    catch (const std::invalid_argument &e) {
+        ;
+    }
+    catch (const std::out_of_range &e) {
+        ;
+    }
 
     const char *Mark = env->GetStringUTFChars(DesiredMark, nullptr);
     std::string desiredMark = std::string(Mark);

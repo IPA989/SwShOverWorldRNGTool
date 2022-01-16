@@ -129,11 +129,23 @@ public class MainActivity extends AppCompatActivity {
 
         Button searchButton = findViewById(R.id.search);
 //        searchButton.setText("Searching");
-
         EditText st0 = findViewById(R.id.s0);
-        String s0 = st0.getText().toString();
         EditText st1 = findViewById(R.id.s1);
+
+        String s0 = st0.getText().toString();
         String s1 = st1.getText().toString();
+
+//        String s0;
+//        String s1;
+//        try{
+//            s0 = st0.getText().toString();
+//            s1 = st1.getText().toString();
+//        } catch (error){
+//            search = false;
+//        }
+
+
+
 
         EditText advmin = findViewById(R.id.advmin);
         EditText advmax = findViewById(R.id.advmax);
