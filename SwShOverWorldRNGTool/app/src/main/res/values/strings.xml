@@ -3,7 +3,6 @@
     <string name="tab_text_1">Search</string>
     <string name="tab_text_2">Result</string>
     <string name="state">0000000000000001</string>
-    <string name="motions" />
     <string name="state0Label">State0:</string>
     <string name="state1Label">State1:</string>
     <string name="motionCount">0</string>
