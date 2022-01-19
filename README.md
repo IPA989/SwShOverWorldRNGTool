@@ -6,6 +6,8 @@ This program is Android application for Pokémon Sword and Shield Overworld RNG.
 
 # Download
 
+[Google Play Store](https://play.google.com/store/apps/details?id=com.ipa989.swshoverworldrngtool)
+
 [Release](https://github.com/IPA989/SwShOverWorldRNGTool/releases)
 
 Download .apk file and install.
@@ -18,7 +20,7 @@ Android 7.0
 
 I borrowed some code from the swsh-overworld-rng-gui [@LegoFigure11](https://github.com/LegoFigure11/) .
 
-I transrate C# code to Java and C++ code for Android.
+I transrated C# code to Java and C++ code for Android.
 
 # License
 
