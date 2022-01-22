@@ -63,33 +63,7 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
         // Restore the state.
-//        if (savedInstanceState != null) {
-//            mMessages0.setText(savedInstanceState.getString("s0_text"));
-//            mMessages1.setText(savedInstanceState.getString("s1_text"));
-//            if(savedInstanceState.getBoolean("ShinyCharm")){
-//                shiny.setChecked(true);
-//            }
-//            if(savedInstanceState.getBoolean("MarkCharm")){
-//                mark.setChecked(true);
-//            }
-//            tsv.setText(savedInstanceState.getString("tsv"));
-//            trv.setText(savedInstanceState.getString("trv"));
-//        }
     }
-
-
-
-//    @Override
-//    public void onSaveInstanceState(Bundle outState) {
-//        super.onSaveInstanceState(outState);
-//        outState.putString("s0_text",mMessages0.getText().toString());
-//        outState.putString("s1_text",mMessages1.getText().toString());
-//        outState.putBoolean("MarkCharm", mark.isChecked());
-//        outState.putBoolean("ShinyCharm", shiny.isChecked());
-//        outState.putString("tsv",tsv.getText().toString());
-//        outState.putString("trv",trv.getText().toString());
-//    }
-
 
     public void onclickState(View view) {
         Intent intent = new Intent(this, State_Search.class);
@@ -128,23 +102,11 @@ public class MainActivity extends AppCompatActivity {
         boolean search = true;
 
         Button searchButton = findViewById(R.id.search);
-//        searchButton.setText("Searching");
         EditText st0 = findViewById(R.id.s0);
         EditText st1 = findViewById(R.id.s1);
 
         String s0 = st0.getText().toString();
         String s1 = st1.getText().toString();
-
-//        String s0;
-//        String s1;
-//        try{
-//            s0 = st0.getText().toString();
-//            s1 = st1.getText().toString();
-//        } catch (error){
-//            search = false;
-//        }
-
-
 
 
         EditText advmin = findViewById(R.id.advmin);
@@ -249,7 +211,6 @@ public class MainActivity extends AppCompatActivity {
         radioButton = (RadioButton) findViewById(checkedId);
         String DesiredShiny = radioButton.getText().toString();
 
-
 //        Check input error
 
         if(
@@ -275,12 +236,19 @@ public class MainActivity extends AppCompatActivity {
 
         // call to a native method
         TextView tv = findViewById(R.id.resultView);
-        String Result = resultFromJNI(
-                s0, s1, MinAdv, MaxAdv, TSV, TRV, ShinyCharm, MarkCharm,
-                Weather, Static, Fishing, HeldItem, DesiredMark, DesiredShiny,
-                DesiredNature, LevelMin, LevelMax, SlotMin, SlotMax, MinIVs, MaxIVs,
-                IsAbilityLocked, EggMoveCount, KOs, FlawlessIVs, IsCuteCharm,
-                IsShinyLocked, TSVSearch);
+        String Result;
+        try{
+            Result = resultFromJNI(
+                    s0, s1, MinAdv, MaxAdv, TSV, TRV, ShinyCharm, MarkCharm,
+                    Weather, Static, Fishing, HeldItem, DesiredMark, DesiredShiny,
+                    DesiredNature, LevelMin, LevelMax, SlotMin, SlotMax, MinIVs, MaxIVs,
+                    IsAbilityLocked, EggMoveCount, KOs, FlawlessIVs, IsCuteCharm,
+                    IsShinyLocked, TSVSearch);
+        }
+        catch (Exception e){
+            Result = e.toString();
+        }
+
 
 
 //        String Result = stringFromJNI();

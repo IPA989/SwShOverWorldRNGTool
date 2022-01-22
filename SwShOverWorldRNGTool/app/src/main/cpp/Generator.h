@@ -45,11 +45,11 @@ public:
             MarkRolls = 3;
         else
             MarkRolls = 1;
-        int results = 0;
+        int resultcnt = 0;
 
         unsigned int TSV = GetTSV(TID, SID);
         // int          TIDSID  = (TSV << 4) + TRV;
-        int          maxView = 10000;
+        int          maxView = 1000;
         unsigned int IVs[6];
         bool         GenerateLevel = (LevelMin != LevelMax);
         unsigned int LevelDelta    = LevelMax - LevelMin + 1;
@@ -72,7 +72,7 @@ public:
             go.Next();
         }
 
-        while (advance < advances & results < maxView) {
+        while (advance < advances && resultcnt < maxView) {
             //        while (advance < advances) {
 
             // Init new RNG
@@ -287,8 +287,7 @@ public:
             else
                 go.Next();
             advance += 1;
-            results++;
-            maxView++;
+            resultcnt++;
         }
 
         return Results;
