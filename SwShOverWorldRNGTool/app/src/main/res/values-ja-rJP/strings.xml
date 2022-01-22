@@ -29,7 +29,7 @@
     <string name="randomItem">ランダムアイテム</string>
     <string name="fishing">釣り</string>
     <string name="isAbilityLocked">特性固定</string>
-    <string name="staticCheck">固定シンボル</string>
+    <string name="staticCheck">日替わりシンボル</string>
     <string name="TSVSearch">TSV検索</string>
     <string name="hp">HP:</string>
     <string name="IVsMin">0</string>
