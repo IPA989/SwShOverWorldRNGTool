@@ -214,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
 //        Check input error
 
         if(
-                MaxAdv > 100000000 ||
+                MaxAdv > 90000 ||
                 LevelMax > 100 ||
                 SlotMax > 100 ||
                 LevelMax < LevelMin ||
