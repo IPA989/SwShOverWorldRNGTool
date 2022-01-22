@@ -31,6 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        style="@style/TextAppearance.AppCompat"
         android:text="@string/stateSearchLabel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -56,12 +57,14 @@
                     android:id="@+id/motioncountLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    style="@style/TextAppearance.AppCompat"
                     android:text="@string/motionCountLabel" />
 
                 <TextView
                     android:id="@+id/motioncount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    style="@style/TextAppearance.AppCompat"
                     android:layout_weight="1"
                     android:text="@string/motionCount" />
             </LinearLayout>
@@ -71,6 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/state0Label" />
 
             <TextView
@@ -79,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="8"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/state"
                 android:textSize="14sp" />
 
@@ -95,6 +100,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="8"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/state"
                 android:textSize="14sp" />
 
@@ -124,6 +130,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/denStateSearch" />
 
             <EditText
@@ -142,6 +149,7 @@
                 android:id="@+id/searchRange"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/search_range" />
 
             <EditText
@@ -169,6 +177,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/state0Label" />
 
             <TextView
@@ -177,6 +186,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="8"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/state"
                 android:textSize="14sp" />
 
@@ -185,6 +195,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/state1Label" />
 
             <TextView
@@ -193,6 +204,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="8"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/state"
                 android:textSize="14sp" />
 
@@ -200,6 +212,7 @@
                 android:id="@+id/frameResult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/frameResult" />
 
             <LinearLayout

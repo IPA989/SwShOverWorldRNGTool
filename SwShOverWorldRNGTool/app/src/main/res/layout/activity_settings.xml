@@ -14,6 +14,7 @@
         android:id="@+id/settingAboutLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/TextAppearance.AppCompat"
         android:text="@string/settingAboutLabel"
         android:textSize="20sp" />
 
@@ -24,6 +25,7 @@
         android:layout_marginTop="8dp"
         android:autoLink="web"
         android:minHeight="48dp"
+        style="@style/TextAppearance.AppCompat"
         android:text="@string/settingAbout" />
 
     <TextView
@@ -31,6 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/LicensesLabel"
+        style="@style/TextAppearance.AppCompat"
         android:textSize="20sp" />
 
     <TextView
@@ -38,7 +41,8 @@
         android:layout_marginTop="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/TextAppearance.AppCompat"
         android:autoLink="web"
-android:text="@string/Licenses" />
+        android:text="@string/Licenses" />
 
 </LinearLayout>

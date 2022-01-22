@@ -50,6 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/state0Label" />
 
             <EditText
@@ -69,6 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/state1Label" />
 
             <EditText
@@ -107,6 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/advancesLabel" />
 
             <EditText
@@ -139,6 +142,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/tsvLabel" />
 
             <EditText
@@ -160,6 +164,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/trvLabel" />
 
             <EditText
@@ -199,6 +204,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/markLabel" />
 
             <RadioGroup
@@ -243,6 +249,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/ShinyLabel" />
 
             <RadioGroup
@@ -282,6 +289,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:visibility="gone"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/natureLabel" />
 
             <EditText
@@ -367,6 +375,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/hp" />
 
             <LinearLayout
@@ -393,6 +402,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    style="@style/TextAppearance.AppCompat"
                     android:text="@string/hyphen"
                     android:textAlignment="center" />
 
@@ -416,6 +426,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/atk" />
 
             <LinearLayout
@@ -442,6 +453,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    style="@style/TextAppearance.AppCompat"
                     android:text="@string/hyphen"
                     android:textAlignment="center" />
 
@@ -465,6 +477,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/def" />
 
             <LinearLayout
@@ -491,6 +504,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    style="@style/TextAppearance.AppCompat"
                     android:text="@string/hyphen"
                     android:textAlignment="center" />
 
@@ -514,6 +528,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/spa" />
 
             <LinearLayout
@@ -540,6 +555,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    style="@style/TextAppearance.AppCompat"
                     android:text="@string/hyphen"
                     android:textAlignment="center" />
 
@@ -563,6 +579,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/spd" />
 
             <LinearLayout
@@ -589,6 +606,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    style="@style/TextAppearance.AppCompat"
                     android:text="@string/hyphen"
                     android:textAlignment="center" />
 
@@ -612,6 +630,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/spe" />
 
             <LinearLayout
@@ -639,6 +658,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    style="@style/TextAppearance.AppCompat"
                     android:text="@string/hyphen"
                     android:textAlignment="center" />
 
@@ -662,6 +682,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/slot" />
 
             <LinearLayout
@@ -688,6 +709,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    style="@style/TextAppearance.AppCompat"
                     android:text="@string/hyphen"
                     android:textAlignment="center" />
 
@@ -709,6 +731,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/level" />
 
             <LinearLayout
@@ -735,6 +758,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    style="@style/TextAppearance.AppCompat"
                     android:text="@string/hyphen"
                     android:textAlignment="center" />
 
@@ -756,6 +780,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
                 android:text="@string/kosLabel" />
 
             <EditText
