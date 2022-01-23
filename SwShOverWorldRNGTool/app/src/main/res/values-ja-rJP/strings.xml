@@ -21,7 +21,7 @@
     <string name="shinyCharm">光るお守り</string>
     <string name="markCharm">証のお守り</string>
     <string name="markLabel">証:</string>
-    <string name="Ignore">Ignore</string>
+    <string name="Ignore">絞り込み無し</string>
     <string name="ShinyLabel">色:</string>
     <string name="natureLabel">性格:</string>
     <string name="cuteCharm">メロメロボディ</string>
@@ -63,4 +63,8 @@
     <string name="settingAbout">https://github.com/IPA989/SwShOverWorldRNGTool</string>
     <string name="LicensesLabel">ライセンス</string>
     <string name="Licenses">GNU General Public License v3.0\nhttps://github.com/IPA989/SwShOverWorldRNGTool/blob/main/LICENSE\n MIT License\nhttps://github.com/IPA989/SwShOverWorldRNGTool/blob/main/Licenses/MITLICENSE</string>
+    <string name="none">証無し</string>
+    <string name="any_mark">証有り</string>
+    <string name="any_personality">雰囲気証</string>
+    <string name="rare">ひとをしらない</string>
 </resources>

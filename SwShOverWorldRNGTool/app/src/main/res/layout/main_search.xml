@@ -223,25 +223,25 @@
                     android:id="@+id/radioButton7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="None" />
+                    android:text="@string/none" />
 
                 <RadioButton
                     android:id="@+id/radioButton6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Any Mark" />
+                    android:text="@string/any_mark" />
 
                 <RadioButton
                     android:id="@+id/radioButton8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Any Personality" />
+                    android:text="@string/any_personality" />
 
                 <RadioButton
                     android:id="@+id/radioButton9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Rare" />
+                    android:text="@string/rare" />
             </RadioGroup>
 
             <TextView
@@ -268,19 +268,19 @@
                     android:id="@+id/radioButton2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Square" />
+                    android:text="◇" />
 
                 <RadioButton
                     android:id="@+id/radioButton4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Star" />
+                    android:text="★" />
 
                 <RadioButton
                     android:id="@+id/radioButton3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Star/Square" />
+                    android:text="★/◇" />
             </RadioGroup>
 
             <TextView

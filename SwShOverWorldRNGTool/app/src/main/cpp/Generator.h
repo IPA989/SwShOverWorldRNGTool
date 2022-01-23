@@ -13,10 +13,11 @@ using namespace std;
 
 class Generator {
 
+
     // Heavily derived from https://github.com/Lincoln-LM/PyNXReader/
 public:
     static std::vector<std::string>
-    Generate(unsigned long long state0, unsigned long long state1, unsigned long long InitialAdvances,
+    Generate(string locale, unsigned long long state0, unsigned long long state1, unsigned long long InitialAdvances,
              unsigned long long advances, unsigned int TID, unsigned int SID,
              bool ShinyCharm, bool MarkCharm, bool Weather, bool Static,
              bool Fishing, bool HeldItem, string DesiredMark,
@@ -29,12 +30,27 @@ public:
     {
 
         std::vector<std::string> Results;
-        string                   Natures[25] = {
+        string                   jaNatures[25] = {
+                "がんばりや", "さみしがり", "ゆうかん", "いじっぱり", "やんちゃ", "ずぶとい", "すなお", "のんき", "わんぱく", "のうてんき", "おくびょう", "せっかち", "まじめ", "ようき", "むじゃき", "ひかえめ", "おっとり", "れいせい", "てれや", "うっかりや", "おだやか", "おとなしい", "なまいき", "しんちょう", "きまぐれ"
+        };
+        string                   enNatures[25] = {
                 "Hardy",  "Lonely", "Brave",   "Adamant", "Naughty",
                 "Bold",   "Docile", "Relaxed", "Impish",  "Lax",
                 "Timid",  "Hasty",  "Serious", "Jolly",   "Naive",
                 "Modest", "Mild",   "Quiet",   "Bashful", "Rash",
                 "Calm",   "Gentle", "Sassy",   "Careful", "Quirky"};
+
+        string* Natures;
+
+        if (locale == "JA") {
+            Natures = reinterpret_cast<string *>(&jaNatures);
+        }
+        else {
+            Natures = reinterpret_cast<string *>(&enNatures);
+        }
+
+
+
         int ShinyRolls;
         int MarkRolls;
         if (ShinyCharm)
@@ -71,6 +87,7 @@ public:
         for (unsigned long long i = 0; i < InitialAdvances; i++) {
             go.Next();
         }
+
 
         while (advance < advances && resultcnt < maxView) {
             //        while (advance < advances) {
@@ -112,7 +129,7 @@ public:
 
                 Mark =
                         GenerateMark(&rng, Weather, Fishing,
-                                     MarkRolls); // Double Mark Gen happens always?
+                                     MarkRolls, locale); // Double Mark Gen happens always?
                 BrilliantRand = (unsigned int)rng.Rand(1000);
                 if (BrilliantRand < BrilliantThreshold)
                     Brilliant = true;
@@ -138,9 +155,9 @@ public:
 
             if (Gender != "CC")
                 if (rng.Rand(2) == 0)
-                    Gender = "F";
+                    Gender = "♀";
                 else
-                    Gender = "M";
+                    Gender = "♂";
             Nature      = (unsigned int)rng.Rand(25);
             AbilityRoll = 2;
             if (!IsAbilityLocked)
@@ -178,16 +195,16 @@ public:
 
             string shinyxor;
             if (ShinyXOR == 0)
-                shinyxor = "Square";
+                shinyxor = "◇";
             else if (ShinyXOR < 16)
-                shinyxor = "Star";
+                shinyxor = "★";
             else
-                shinyxor = "No";
+                shinyxor = "-";
 
-            if (!PassIVs || (DesiredShiny == "Square" && ShinyXOR != 0) ||
-                (DesiredShiny == "Star" && (ShinyXOR > 15 || ShinyXOR == 0)) ||
-                (DesiredShiny == "Star/Square" && ShinyXOR > 15) ||
-                (DesiredShiny == "No" && ShinyXOR < 16)) {
+            if (!PassIVs || (DesiredShiny == "◇" && ShinyXOR != 0) ||
+                (DesiredShiny == "★" && (ShinyXOR > 15 || ShinyXOR == 0)) ||
+                (DesiredShiny == "★/◇" && ShinyXOR > 15) ||
+                (DesiredShiny == "-" && ShinyXOR < 16)) {
                 if (TIDSIDSearch)
                     go.Previous();
                 else
@@ -196,9 +213,9 @@ public:
                 continue;
             }
 
-            Mark = GenerateMark(&rng, Weather, Fishing, MarkRolls);
+            Mark = GenerateMark(&rng, Weather, Fishing, MarkRolls, locale);
 
-            if (!PassesMarkFilter(Mark, DesiredMark)) {
+            if (!PassesMarkFilter(Mark, DesiredMark, locale)) {
                 if (TIDSIDSearch)
                     go.Previous();
                 else
@@ -207,7 +224,7 @@ public:
                 continue;
             }
 
-            if (!PassesNatureFilter(Natures[Nature], DesiredNature)) {
+            if (!PassesNatureFilter(Natures[Nature], DesiredNature, locale)) {
                 if (TIDSIDSearch)
                     go.Previous();
                 else
@@ -229,7 +246,7 @@ public:
             Results.push_back(sout.str()); // TSV
             sout.str("");
             sout.clear();
-            sout << std::setfill(' ') << std::setw(7) << shinyxor;
+            sout << std::setfill(' ') << std::setw(2) << shinyxor;
             Results.push_back(shinyxor);
             sout.str("");
             sout.clear();
@@ -299,15 +316,28 @@ public:
     }
 
     static string GenerateMark(Xoroshiro *go, bool Weather, bool Fishing,
-                               int MarkRolls)
+                               int MarkRolls, string locale)
     {
-        string PersonalityMarks[28] = {
+        string jaMarks[34] = {
+                "あばれんぼう", "のうてんき", "ドキドキ", "ワクワク", "オーラ", "クール", "アグレッシブ",
+                "ボーっと", "しあわせ", "ぷんぷん", "ニコニコ", "メソメソ", "ごきげん", "ふきげん", "ちてき", "あれくるう", "スキをねらう",
+                "いかつい", "やさしげ", "あわてんぼう", "やるきまんまん", "やるきゼロ", "ふんぞりかえった", "じしんのない",
+                "そぼくな", "きどっている", "げんきいっぱい", "どこかくたびれた", "ひとをしらない", "よくみる", "天気", "時間", "釣り", "証無し"
+        };
+        string enMarks[34] = {
                 "Rowdy",     "AbsentMinded", "Jittery",  "Excited", "Charismatic",
                 "Calmness",  "Intense",      "ZonedOut", "Joyful",  "Angry",
                 "Smiley",    "Teary",        "Upbeat",   "Peeved",  "Intellectual",
                 "Ferocious", "Crafty",       "Scowling", "Kindly",  "Flustered",
                 "PumpedUp",  "ZeroEnergy",   "Prideful", "Unsure",  "Humble",
-                "Thorny",    "Vigor",        "Slump"};
+                "Thorny",    "Vigor",        "Slump", "Rare", "Uncommon", "Weather", "Time", "Fish", "None"};
+        string* Marks;
+        if (locale == "JA") {
+            Marks = reinterpret_cast<string *>(&jaMarks);
+        }
+        else {
+            Marks = reinterpret_cast<string *>(&enMarks);
+        }
         for (int i = 0; i < MarkRolls; i++) {
             unsigned int rare = (unsigned int)go->Rand(1000);
             unsigned int pers = (unsigned int)go->Rand(100);
@@ -317,20 +347,20 @@ public:
             unsigned int fish = (unsigned int)go->Rand(25);
 
             if (rare == 0)
-                return "Rare";
+                return Marks[28];
             if (pers == 0) {
-                return PersonalityMarks[go->Rand(28)];
+                return Marks[go->Rand(28)];
             }
             if (unco == 0)
-                return "Uncommon";
+                return Marks[29];
             if (weat == 0 && Weather)
-                return "Weather";
+                return Marks[30];
             if (time == 0)
-                return "Time";
+                return Marks[31];
             if (fish == 0 && Fishing)
-                return "Fish";
+                return Marks[32];
         }
-        return "None";
+        return Marks[33];
     }
 
 private:
@@ -424,19 +454,45 @@ public:
     }
 
 private:
-    static bool PassesMarkFilter(string Mark, string DesiredMark)
+    static bool PassesMarkFilter(string Mark, string DesiredMark, string locale)
     {
-        return !((DesiredMark == "Any Mark" && Mark == "None") ||
-                 (DesiredMark == "Any Personality" &&
-                  (Mark == "None" || Mark == "Uncommon" || Mark == "Time" ||
-                   Mark == "Weather" || Mark == "Fishing" || Mark == "Rare")) ||
-                 (DesiredMark != "Ignore" && DesiredMark != "Any Mark" &&
-                  DesiredMark != "Any Personality" && Mark != DesiredMark));
+        string jaMarks[37] = {
+                "あばれんぼう", "のうてんき", "ドキドキ", "ワクワク", "オーラ", "クール", "アグレッシブ",
+                "ボーっと", "しあわせ", "ぷんぷん", "ニコニコ", "メソメソ", "ごきげん", "ふきげん", "ちてき", "あれくるう", "スキをねらう",
+                "いかつい", "やさしげ", "あわてんぼう", "やるきまんまん", "やるきゼロ", "ふんぞりかえった", "じしんのない",
+                "そぼくな", "きどっている", "げんきいっぱい", "どこかくたびれた", "ひとをしらない", "よくみる", "天気", "時間", "釣り", "証無し", "絞り込み無し", "証有り", "雰囲気証"
+        };
+        string enMarks[37] = {
+                "Rowdy",     "AbsentMinded", "Jittery",  "Excited", "Charismatic",
+                "Calmness",  "Intense",      "ZonedOut", "Joyful",  "Angry",
+                "Smiley",    "Teary",        "Upbeat",   "Peeved",  "Intellectual",
+                "Ferocious", "Crafty",       "Scowling", "Kindly",  "Flustered",
+                "PumpedUp",  "ZeroEnergy",   "Prideful", "Unsure",  "Humble",
+                "Thorny",    "Vigor",        "Slump", "Rare", "Uncommon", "Weather", "Time", "Fish", "None", "Ignore", "Any Mark", "Any Personality"};
+        string* Marks;
+        if (locale == "JA") {
+            Marks = reinterpret_cast<string *>(&jaMarks);
+        }
+        else {
+            Marks = reinterpret_cast<string *>(&enMarks);
+        }
+        return !((DesiredMark == Marks[35] && Mark == Marks[33]) ||
+                 (DesiredMark == Marks[36] &&
+                  (Mark == Marks[33] || Mark == Marks[29] || Mark == Marks[31] ||
+                   Mark == Marks[30] || Mark == Marks[32] || Mark == Marks[28])) ||
+                 (DesiredMark != Marks[34] && DesiredMark != Marks[35] &&
+                  DesiredMark != Marks[36] && Mark != DesiredMark));
     }
 
-    static bool PassesNatureFilter(string Nature, string DesiredNature)
+    static bool PassesNatureFilter(string Nature, string DesiredNature, string locale)
     {
-        return ((DesiredNature == Nature) || (DesiredNature == "Ignore"));
+        string Ignore;
+        if(locale == "JA"){
+            Ignore = "絞り込み無し";
+        }else {
+            Ignore = "Ignore";
+        }
+        return ((DesiredNature == Nature) || (DesiredNature == Ignore));
     }
 
     static std::vector<int> GenerateBrilliantInfo(int KOs)

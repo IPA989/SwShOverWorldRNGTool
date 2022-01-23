@@ -21,6 +21,8 @@ import com.ipa989.swshoverworldrngtool.ui.main.SectionsPagerAdapter;
 
 import com.ipa989.swshoverworldrngtool.databinding.ActivityMainBinding;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     // Used to load the 'swshoverworldrngtool' library on application startup.
@@ -39,10 +41,6 @@ public class MainActivity extends AppCompatActivity {
     public static final int TEXT_REQUEST = 1;
     private EditText mMessages0;
     private EditText mMessages1;
-    private EditText tsv;
-    private EditText trv;
-    private CheckBox shiny;
-    private CheckBox mark;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        mMessages0 = findViewById(R.id.s0);
-        mMessages1 = findViewById(R.id.s1);
-        shiny = findViewById(R.id.shinycharm);
-        mark = findViewById(R.id.markcharm);
-        tsv = findViewById(R.id.tsv);
-        trv = findViewById(R.id.trv);
 
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = binding.viewPager;
@@ -63,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
         // Restore the state.
+
     }
 
     public void onclickState(View view) {
@@ -98,6 +91,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onclickMainSearch(View view) {
+
+
+
+        Toast toast1 = Toast.makeText(this, "Search Start!",
+                Toast.LENGTH_SHORT);
+        toast1.show();
+
+        Locale locale = Locale.getDefault();
+        String lo;
+        if (locale.equals(Locale.JAPAN)) {
+            // 日本語環境
+            lo = "JA";
+        } else {
+            // 英語環境
+            lo = "EN";
+        }
 
         boolean search = true;
 
@@ -196,7 +205,14 @@ public class MainActivity extends AppCompatActivity {
 
         boolean TSVSearch = false;
 
-        String DesiredNature = "Ignore";
+        String Ignore;
+        if(lo == "JA"){
+            Ignore = "絞り込み無し";
+        }else {
+            Ignore = "Ignore";
+        }
+
+        String DesiredNature = Ignore;
 
         RadioGroup desiredmark = findViewById(R.id.MarkRadio);
         RadioGroup desiredshiny = findViewById(R.id.ShinyRadio);
@@ -214,7 +230,6 @@ public class MainActivity extends AppCompatActivity {
 //        Check input error
 
         if(
-                MaxAdv > 90000 ||
                 LevelMax > 100 ||
                 SlotMax > 100 ||
                 LevelMax < LevelMin ||
@@ -239,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
         String Result;
         try{
             Result = resultFromJNI(
-                    s0, s1, MinAdv, MaxAdv, TSV, TRV, ShinyCharm, MarkCharm,
+                    lo, s0, s1, MinAdv, MaxAdv, TSV, TRV, ShinyCharm, MarkCharm,
                     Weather, Static, Fishing, HeldItem, DesiredMark, DesiredShiny,
                     DesiredNature, LevelMin, LevelMax, SlotMin, SlotMax, MinIVs, MaxIVs,
                     IsAbilityLocked, EggMoveCount, KOs, FlawlessIVs, IsCuteCharm,
@@ -268,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
         toast.show();
     }
 
-    public native String resultFromJNI(String state0, String state1
+    public native String resultFromJNI(String locale, String state0, String state1
             , long AdvMin, long AdvMax, int TSV, int TRV, boolean ShinyCharm
             , boolean MarkCharm, boolean Weather, boolean Static, boolean Fishing
             , boolean HeldItem, String DesiredMark, String DesiredShiny, String DesiredNature

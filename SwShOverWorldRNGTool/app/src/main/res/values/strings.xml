@@ -62,4 +62,8 @@
     <string name="settingAbout">https://github.com/IPA989/SwShOverWorldRNGTool</string>
     <string name="LicensesLabel">Licenses</string>
     <string name="Licenses">GNU General Public License v3.0\nhttps://github.com/IPA989/SwShOverWorldRNGTool/blob/main/LICENSE\n MIT License\nhttps://github.com/IPA989/SwShOverWorldRNGTool/blob/main/Licenses/MITLICENSE</string>
+    <string name="none">None</string>
+    <string name="any_mark">Any Mark</string>
+    <string name="any_personality">Any Personality</string>
+    <string name="rare">Rare</string>
 </resources>
