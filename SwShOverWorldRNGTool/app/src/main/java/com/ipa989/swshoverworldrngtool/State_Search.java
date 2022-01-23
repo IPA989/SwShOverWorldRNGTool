@@ -12,6 +12,7 @@ import com.ipa989.swshoverworldrngtool.xoroshiro.SeedSolver;
 import com.ipa989.swshoverworldrngtool.xoroshiro.SeedSolverConig;
 
 import java.util.List;
+import java.util.Locale;
 
 public class State_Search extends AppCompatActivity {
 
@@ -125,6 +126,15 @@ public class State_Search extends AppCompatActivity {
 
             List<String> state = SeedSolver.list(config);
 
+            String resultcount;
+            Locale locale = Locale.getDefault();
+            if (locale.equals(Locale.JAPAN)) {
+                // 日本語環境
+                resultcount = "結果数";
+            } else {
+                // 英語環境
+                resultcount = "resultCount";
+            }
 
             if(state != null && state.get(0).equals("1")){
 
@@ -138,11 +148,13 @@ public class State_Search extends AppCompatActivity {
 
                 TextView f = findViewById(R.id.frameResult);
                 String frame = state.get(3);
-                String text = "[F]: " + frame + ", resultCount: " + state.get(0);
+
+
+                String text = "[F]: " + frame + ", " + resultcount  + ": " + state.get(0);
                 f.setText(text);
             }else{
                 TextView f = findViewById(R.id.frameResult);
-                String text = "[F]: 0, resultsCount: " + state.get(0);
+                String text = "[F]: 0, " + resultcount + ": " + state.get(0);
                 f.setText(text);
             }
 

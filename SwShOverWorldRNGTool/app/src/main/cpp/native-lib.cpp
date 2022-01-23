@@ -113,11 +113,11 @@ Java_com_ipa989_swshoverworldrngtool_MainActivity_resultFromJNI(
             if (r == 0) {
                 Result += "\n";
             }
-//            if(output[r]){
+            if(output[r]){
                 Result += results[i];
                 if(r!=15)
                 Result += ", ";
-//            }
+            }
         }
     }
 
