@@ -4,6 +4,8 @@
 
 This program is Android application for Pokémon Sword and Shield Overworld RNG.
 
+[使い方(日本語)](https://github.com/IPA989/SwShOverWorldRNGTool/wiki/%E4%BD%BF%E3%81%84%E6%96%B9-(%E6%97%A5%E6%9C%AC%E8%AA%9E))
+
 # Download
 
 [Google Play Store](https://play.google.com/store/apps/details?id=com.ipa989.swshoverworldrngtool)
