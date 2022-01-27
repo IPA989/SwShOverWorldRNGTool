@@ -113,7 +113,7 @@ public class SeedSolver {
         List<Integer> foundFrames = new ArrayList<>();
 
         // minからmaxまで検索
-        for (int i = frameStartInclusive; i < frameEndExclusive - frameStartInclusive + motionsBoxed.length; i++) {
+        for (int i = frameStartInclusive; i < frameEndExclusive + motionsBoxed.length; i++) {
             if (motionsBoxed.length <= _motions.size()) {
                 // 結果が見つかったら
                 if (Arrays.equals(motionsBoxed, _motions.toArray(new Byte[motionsBoxed.length]))) {
