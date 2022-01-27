@@ -38,14 +38,14 @@ Java_com_ipa989_swshoverworldrngtool_MainActivity_resultFromJNI(
     unsigned long long st1 = 1;
 
     try {
-        st0 = stoll(s0, nullptr, 16);
-        st1 = stoll(s1, nullptr, 16);
+        st0 = stoull(s0, nullptr, 16);
+        st1 = stoull(s1, nullptr, 16);
     }
     catch (const std::invalid_argument &e) {
-        return env->NewStringUTF("input error");
+        return env->NewStringUTF("invalid_argument");
     }
     catch (const std::out_of_range &e) {
-        return env->NewStringUTF("input error");
+        return env->NewStringUTF("out_of_range");
     }
 
     const char *Mark = env->GetStringUTFChars(DesiredMark, nullptr);
@@ -71,6 +71,15 @@ Java_com_ipa989_swshoverworldrngtool_MainActivity_resultFromJNI(
         maxIVs[i] = array[i];
     }
     env->ReleaseIntArrayElements(MinIVs, array, NULL);
+    if(Static){
+        output[8] = false;
+        output[9] = false;
+        output[12] = false;
+    }
+    if(TSVSearch){
+        output[1] = true;
+        output[15] = false;
+    }
 
     std::string jaresultLabel[] = {"[F]", "TSV", " 色", "   証", "個体値", "特性", "性別", "性格", "Lv", "スロット", "PID", "EC", "オーラ", "  s0", "  s1", "モーション"};
     std::string enresultLabel[] = {"[F]", "TSV", " Shiny", "   Mark", "IVs(HABCDS)", "Ability", "Gender", "Nature", "Lv", "Slot", "PID", "EC", "Brilliant", "  s0", "  s1", "Motion"};
