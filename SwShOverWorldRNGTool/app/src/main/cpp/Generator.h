@@ -97,10 +97,18 @@ public:
             Brilliant = false;
             Gender    = "";
 
+            string CuteCharm;
+            if (locale == "JA") {
+                CuteCharm = "メロボ";
+            }
+            else {
+                CuteCharm = "CC";
+            }
+
             if (Static) {
                 LeadRand = (unsigned int)rng.Rand(100);
                 if (IsCuteCharm && LeadRand <= 65)
-                    Gender = "CC";
+                    Gender = CuteCharm;
             }
             else {
                 if (!Fishing)
@@ -108,7 +116,7 @@ public:
                 rng.Rand(100);
                 LeadRand = (unsigned int)rng.Rand(100);
                 if (IsCuteCharm && LeadRand <= 65)
-                    Gender = "CC";
+                    Gender = CuteCharm;
 
                 SlotRand = (unsigned int)rng.Rand(100);
                 if (SlotMin > SlotRand || SlotMax < SlotRand) {
@@ -153,7 +161,7 @@ public:
                 }
             }
 
-            if (Gender != "CC")
+            if (Gender != CuteCharm)
                 if (rng.Rand(2) == 0)
                     Gender = "♀";
                 else
