@@ -124,6 +124,14 @@
                 android:textSize="12sp"
                 android:autofillHints="" />
 
+            <TextView
+                android:id="@+id/advancesMaxLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
+                android:text="+" />
+
             <EditText
                 android:id="@+id/advmax"
                 android:layout_width="match_parent"
@@ -143,7 +151,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 style="@style/TextAppearance.AppCompat"
-                android:text="@string/tsvLabel" />
+                android:text="TSV" />
 
             <EditText
                 android:id="@+id/tsv"
@@ -155,31 +163,31 @@
                 android:maxLength="5"
                 android:inputType="number"
                 android:minHeight="48dp"
-                android:text="@string/tsv"
+                android:text="1234"
                 android:textSize="12sp"
                 android:autofillHints="" />
 
-            <TextView
-                android:id="@+id/sidLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                style="@style/TextAppearance.AppCompat"
-                android:text="@string/trvLabel" />
+<!--            <TextView-->
+<!--                android:id="@+id/sidLabel"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                style="@style/TextAppearance.AppCompat"-->
+<!--                android:text="@string/trvLabel" />-->
 
-            <EditText
-                android:id="@+id/trv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1"
-                android:ems="1"
-                android:maxLength="5"
-                android:inputType="number"
-                android:minHeight="48dp"
-                android:text="@string/trv"
-                android:textSize="12sp"
-                android:autofillHints="" />
+<!--            <EditText-->
+<!--                android:id="@+id/trv"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginEnd="8dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:ems="1"-->
+<!--                android:maxLength="5"-->
+<!--                android:inputType="number"-->
+<!--                android:minHeight="48dp"-->
+<!--                android:text="@string/trv"-->
+<!--                android:textSize="12sp"-->
+<!--                android:autofillHints="" />-->
 
             <CheckBox
                 android:id="@+id/shinycharm"
@@ -366,7 +374,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:visibility="gone"
                 android:text="@string/TSVSearch"
                 android:textSize="14sp" />
 

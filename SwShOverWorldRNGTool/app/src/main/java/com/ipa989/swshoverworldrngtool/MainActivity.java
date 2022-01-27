@@ -123,13 +123,16 @@ public class MainActivity extends AppCompatActivity {
         long  MinAdv = Long.parseLong(advmin.getText().toString());
         long MaxAdv = Long.parseLong(advmax.getText().toString());
         EditText tsv = findViewById(R.id.tsv);
-        EditText trv = findViewById(R.id.trv);
+//        EditText trv = findViewById(R.id.trv);
         CheckBox shiny = findViewById(R.id.shinycharm);
         CheckBox mark = findViewById(R.id.markcharm);
         CheckBox weather = findViewById(R.id.weather);
         int TSV = Integer.parseInt(tsv.getText().toString());
-        String tsvs =trv.getText().toString();
-        int TRV = Integer.parseInt(tsvs, 16); // 16進数
+//        String tsvs =trv.getText().toString();
+        TSV *= 16;
+        int TRV = 0;
+//        int TRV = Integer.parseInt(tsv.getText().toString());
+//        int TRV = Integer.parseInt(tsvs, 16); // 16進数
         boolean ShinyCharm = shiny.isChecked();
         boolean MarkCharm  = mark.isChecked();
         boolean Weather    = weather.isChecked();
@@ -200,10 +203,10 @@ public class MainActivity extends AppCompatActivity {
         boolean IsShinyLocked   = false;
         CheckBox cutecharm = findViewById(R.id.cutecharm);
         boolean IsCuteCharm     = cutecharm.isChecked();
-//        CheckBox tsvsearch = findViewById(R.id.TSVsearch);
-//        boolean TSVSearch       = tsvsearch.isChecked();
+        CheckBox tsvsearch = findViewById(R.id.TSVSearch);
+        boolean TSVSearch       = tsvsearch.isChecked();
 
-        boolean TSVSearch = false;
+//        boolean TSVSearch = false;
 
         String Ignore;
         if(lo == "JA"){
@@ -233,13 +236,14 @@ public class MainActivity extends AppCompatActivity {
                 LevelMax > 100 ||
                 SlotMax > 100 ||
                 LevelMax < LevelMin ||
-                SlotMax < SlotMin
+                SlotMax < SlotMin ||
+                TSV > 65536
         ){
             search = false;
         }
 
         for(int i=0; i<6; i++){
-            if(MaxIVs[i] < MinIVs[i]){
+            if(MaxIVs[i] <= MinIVs[i]){
                 search = false;
             }
         }
