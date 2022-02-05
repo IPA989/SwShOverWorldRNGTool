@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SwShOverWorldRNGTool</string>
+    <string name="app_name">SwSh Over World RNG Tool</string>
     <string name="tab_text_1">Search</string>
     <string name="tab_text_2">Result</string>
     <string name="state">0000000000000001</string>
@@ -53,7 +53,7 @@
     <string name="search_range">Search range</string>
     <string name="stateSearchMin">0</string>
     <string name="denStateSearch">Advances search</string>
-    <string name="trvLabel">SID:</string>
+    <string name="trvLabel">TRV:</string>
     <string name="spd">SpD:</string>
     <string name="legendary">Legendary</string>
     <string name="spe">Spe:</string>

@@ -58,12 +58,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:autofillHints=""
+                android:inputType="text"
                 android:maxLength="16"
-                android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:text="@string/state"
-                android:textSize="12sp"
-                android:autofillHints="" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/state1"
@@ -78,12 +78,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:autofillHints=""
+                android:inputType="text"
                 android:maxLength="16"
-                android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:text="@string/state"
-                android:textSize="12sp"
-                android:autofillHints="" />
+                android:textSize="12sp" />
 
             <Button
                 android:id="@+id/stateSearch"
@@ -117,12 +117,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:autofillHints=""
                 android:ems="10"
-                android:maxLength="9"
                 android:inputType="number"
+                android:maxLength="9"
+                android:minHeight="48dp"
                 android:text="@string/advMin"
-                android:textSize="12sp"
-                android:autofillHints="" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/advancesMaxLabel"
@@ -167,27 +168,27 @@
                 android:textSize="12sp"
                 android:autofillHints="" />
 
-<!--            <TextView-->
-<!--                android:id="@+id/sidLabel"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="1"-->
-<!--                style="@style/TextAppearance.AppCompat"-->
-<!--                android:text="@string/trvLabel" />-->
+            <TextView
+                android:id="@+id/trvLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/TextAppearance.AppCompat"
+                android:text="@string/trvLabel" />
 
-<!--            <EditText-->
-<!--                android:id="@+id/trv"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginEnd="8dp"-->
-<!--                android:layout_weight="1"-->
-<!--                android:ems="1"-->
-<!--                android:maxLength="5"-->
-<!--                android:inputType="number"-->
-<!--                android:minHeight="48dp"-->
-<!--                android:text="@string/trv"-->
-<!--                android:textSize="12sp"-->
-<!--                android:autofillHints="" />-->
+            <EditText
+                android:id="@+id/trv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:ems="1"
+                android:inputType="text"
+                android:maxLength="1"
+                android:minHeight="48dp"
+                android:text="@string/trv"
+                android:textSize="12sp" />
 
             <CheckBox
                 android:id="@+id/shinycharm"
@@ -293,24 +294,24 @@
 
             <TextView
                 android:id="@+id/natureLabel"
+                style="@style/TextAppearance.AppCompat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:visibility="gone"
-                style="@style/TextAppearance.AppCompat"
-                android:text="@string/natureLabel" />
+                android:text="@string/natureLabel"
+                android:visibility="gone" />
 
             <EditText
                 android:id="@+id/desiredNature"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:visibility="gone"
+                android:autofillHints=""
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:text="@string/Ignore"
-                android:autofillHints="" />
+                android:visibility="gone" />
 
             <CheckBox
                 android:id="@+id/cutecharm"

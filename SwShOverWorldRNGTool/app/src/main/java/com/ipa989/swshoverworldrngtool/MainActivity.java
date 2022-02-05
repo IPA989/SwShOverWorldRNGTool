@@ -94,9 +94,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        Toast toast1 = Toast.makeText(this, "Search Start!",
-                Toast.LENGTH_SHORT);
-        toast1.show();
+//        Toast toast1 = Toast.makeText(this, "Search Start!",
+//                Toast.LENGTH_SHORT);
+//        toast1.show();
 
         Locale locale = Locale.getDefault();
         String lo;
@@ -123,16 +123,22 @@ public class MainActivity extends AppCompatActivity {
         long  MinAdv = Long.parseLong(advmin.getText().toString());
         long MaxAdv = Long.parseLong(advmax.getText().toString());
         EditText tsv = findViewById(R.id.tsv);
-//        EditText trv = findViewById(R.id.trv);
+        EditText trv = findViewById(R.id.trv);
         CheckBox shiny = findViewById(R.id.shinycharm);
         CheckBox mark = findViewById(R.id.markcharm);
         CheckBox weather = findViewById(R.id.weather);
         int TSV = Integer.parseInt(tsv.getText().toString());
-//        String tsvs =trv.getText().toString();
+        String tsvs =trv.getText().toString();
         TSV *= 16;
-        int TRV = 0;
+//        int TRV = 0;
 //        int TRV = Integer.parseInt(tsv.getText().toString());
-//        int TRV = Integer.parseInt(tsvs, 16); // 16進数
+        int TRV=0;
+        try{
+            TRV = Integer.parseInt(tsvs, 16); // 16進数
+        }catch(Exception e){
+            search = false;
+        }
+
         boolean ShinyCharm = shiny.isChecked();
         boolean MarkCharm  = mark.isChecked();
         boolean Weather    = weather.isChecked();
@@ -243,7 +249,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         for(int i=0; i<6; i++){
-            if(MaxIVs[i] <= MinIVs[i]){
+            if(MaxIVs[i] < MinIVs[i]){
                 search = false;
             }
         }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SwShOverWorldRNGTool</string>
+    <string name="app_name">SwSh Over World RNG Tool</string>
     <string name="tab_text_1">検索</string>
     <string name="tab_text_2">結果</string>
     <string name="state">0000000000000001</string>
@@ -37,7 +37,7 @@
     <string name="hyphen">-</string>
     <string name="atk">攻撃:</string>
     <string name="def">防御:</string>
-    <string name="spa">素早さ:</string>
+    <string name="spa">特攻:</string>
     <string name="slot">スロット:</string>
     <string name="slotMax">99</string>
     <string name="level">レベル:</string>
@@ -54,10 +54,10 @@
     <string name="search_range">検索範囲</string>
     <string name="stateSearchMin">0</string>
     <string name="denStateSearch">消費数検索</string>
-    <string name="trvLabel">SID:</string>
+    <string name="trvLabel">TRV:</string>
     <string name="spd">特防:</string>
     <string name="legendary">準伝説</string>
-    <string name="spe">特攻:</string>
+    <string name="spe">素早さ:</string>
     <string name="swsh_owrng">SwSh OWRNG</string>
     <string name="settingAboutLabel">About</string>
     <string name="settingAbout">https://github.com/IPA989/SwShOverWorldRNGTool\n\n使い方\nhttps://github.com/IPA989/SwShOverWorldRNGTool/wiki/%E4%BD%BF%E3%81%84%E6%96%B9-(%E6%97%A5%E6%9C%AC%E8%AA%9E)</string>
