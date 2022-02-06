@@ -97,6 +97,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onclickMainSearch(View view) {
+        new AsyncAppTask().execute();
+        ProgressBar prog = findViewById(R.id.progressBar);
+        prog.setVisibility(View.VISIBLE);
 
         // 端末にデータ保存 state, tsv, trv, おまもり
         dataStore = getSharedPreferences("DataStore", MODE_PRIVATE);
@@ -113,14 +116,8 @@ public class MainActivity extends AppCompatActivity {
         editor.putString("trv", (trv.getText().toString()));
         editor.putBoolean("shinyCharm", (shiny.isChecked()));
         editor.putBoolean("markCharm", (mark.isChecked()));
-        //editor.commit();
         editor.apply();
 
-        // スレッド起動
-        new AsyncAppTask().execute();
-        //プログレスバーを表示
-        ProgressBar prog = findViewById(R.id.progressBar);
-        prog.setVisibility(View.VISIBLE);
     }
 
     class AsyncAppTask extends AsyncTask<Void, Void, String> {
@@ -135,10 +132,8 @@ public class MainActivity extends AppCompatActivity {
             Locale locale = Locale.getDefault();
             String lo;
             if (locale.equals(Locale.JAPAN)) {
-                // 日本語環境
                 lo = "JA";
             } else {
-                // 英語環境
                 lo = "EN";
             }
             boolean search = true;
@@ -277,7 +272,6 @@ public class MainActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        // ③
                         Context context = getApplicationContext();
                         Toast toast = Toast.makeText(context, finalWord,
                                 Toast.LENGTH_SHORT);
@@ -286,7 +280,6 @@ public class MainActivity extends AppCompatActivity {
                 });
                 return "Thread Samples";
             }
-
 
             String Result;
             try{
@@ -306,10 +299,11 @@ public class MainActivity extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-//                    setContentView(R.layout.main_result);
                     TextView tv = findViewById(R.id.resultView);
                     if(finalResult != null) {
                         tv.setText(finalResult);
+                        // 検索結果保存
+
                     }
                     Context context = getApplicationContext();
                     String word = getString(R.string.searchEnd);
@@ -322,18 +316,15 @@ public class MainActivity extends AppCompatActivity {
         }
         @Override
         protected void onPostExecute(String result) {
-            // バックグランド処理終了後の処理をここに記述します
             Button button = findViewById(R.id.search);
             String word = getString(R.string.searchButton);
             button.setText(word);
 
-            //プログレスバーを消す
             ProgressBar prog = findViewById(R.id.progressBar);
             prog.setVisibility(View.INVISIBLE);
+
         }
     }
-
-
 
     public native String resultFromJNI(String locale, String state0, String state1
             , long AdvMin, long AdvMax, int TSV, int TRV, boolean ShinyCharm
