@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,7 +22,20 @@ import java.util.Locale;
 
 public class Main_Search extends Fragment {
     private SharedPreferences dataStore;
-
+    private TextView advmin;
+    private TextView advmax;
+    private CheckBox weather;
+    private CheckBox isStatic;
+    private CheckBox fishing;
+    private CheckBox helditem;
+    private CheckBox cutecharm;
+    private CheckBox tsvsearch;
+    private CheckBox ability;
+    private TextView Lvmin;
+    private TextView Lvmax;
+    private TextView slotmin;
+    private TextView slotmax;
+    private TextView kos;
 
     @Nullable
     @Override
@@ -128,9 +142,78 @@ public class Main_Search extends Fragment {
         Spinner natureSpinner = (Spinner) view.findViewById(R.id.natureList);
         natureSpinner.setAdapter(adapter3);
 
+        advmin = view.findViewById(R.id.advmin);
+        advmax = view.findViewById(R.id.advmax);
+        weather = view.findViewById(R.id.weather);
+        isStatic = view.findViewById(R.id.staticCheck);
+        fishing = view.findViewById(R.id.fishing);
+        helditem = view.findViewById(R.id.randomItem);
+        cutecharm = view.findViewById(R.id.cutecharm);
+        tsvsearch = view.findViewById(R.id.TSVSearch);
+        ability = view.findViewById(R.id.isAbilityLocked);
+        Lvmin = view.findViewById(R.id.LvMin);
+        Lvmax = view.findViewById(R.id.LvMax);
+        slotmin = view.findViewById(R.id.SlotMin);
+        slotmax = view.findViewById(R.id.SlotMax);
+        kos = view.findViewById(R.id.KOs);
+
+        if (savedInstanceState != null){
+            advmin.setText(savedInstanceState.getString("advmin"));
+            advmax.setText(savedInstanceState.getString("advmax"));
+            weather.setChecked(savedInstanceState.getBoolean("weather"));
+            isStatic.setChecked(savedInstanceState.getBoolean("isStatic"));
+            fishing.setChecked(savedInstanceState.getBoolean("fishing"));
+            helditem.setChecked(savedInstanceState.getBoolean("helditem"));
+            cutecharm.setChecked(savedInstanceState.getBoolean("cutecharm"));
+            tsvsearch.setChecked(savedInstanceState.getBoolean("tsvsearch"));
+            ability.setChecked(savedInstanceState.getBoolean("ability"));
+            Lvmin.setText(savedInstanceState.getString("Lvmin"));
+            Lvmax.setText(savedInstanceState.getString("Lvmax"));
+            slotmin.setText(savedInstanceState.getString("slotmin"));
+            slotmax.setText(savedInstanceState.getString("slotmin"));
+            kos.setText(savedInstanceState.getString("kos"));
+        }
+
         return view;
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        long  MinAdv = Long.parseLong(advmin.getText().toString());
+        long MaxAdv = Long.parseLong(advmax.getText().toString());
+        boolean Weather    = weather.isChecked();
+        boolean Static     = isStatic.isChecked();
+        boolean   Fishing       = fishing.isChecked();
+        boolean   HeldItem      = helditem.isChecked();
+        boolean IsCuteCharm     = cutecharm.isChecked();
+        boolean TSVSearch       = tsvsearch.isChecked();
+        boolean IsAbilityLocked = ability.isChecked();
+        int LevelMin = Integer.parseInt(Lvmin.getText().toString());
+        int LevelMax = Integer.parseInt(Lvmax.getText().toString());
+        int SlotMin = Integer.parseInt(slotmin.getText().toString());
+        int SlotMax = Integer.parseInt(slotmax.getText().toString());
+        int KOs             = Integer.parseInt(kos.getText().toString());
 
+        outState.putLong("advmin", MinAdv);
+        outState.putLong("advmax", MaxAdv);
+        outState.putBoolean("weather", Weather);
+        outState.putBoolean("isStatic", Static);
+        outState.putBoolean("fishing", Fishing);
+        outState.putBoolean("helditem", HeldItem);
+        outState.putBoolean("cutecharm", IsCuteCharm);
+        outState.putBoolean("tsvsearch", TSVSearch);
+        outState.putBoolean("ability", IsAbilityLocked);
+        outState.putInt("Lvmin", LevelMin);
+        outState.putInt("Lvmax", LevelMax);
+        outState.putInt("slotmin", SlotMin);
+        outState.putInt("slotmin", SlotMax);
+        outState.putInt("kos", KOs);
+//        int[] MinIVs = new int[6];
+//        int[] MaxIVs = new int[6];
+//        int EggMoveCount    = 0;
+//        boolean IsShinyLocked   = false;
+
+    }
 
 }
