@@ -8,7 +8,7 @@
 
     <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginEnd="8dp">
 
         <LinearLayout
@@ -24,10 +24,10 @@
 
                 <TextView
                     android:id="@+id/resultView"
+                    style="@style/TextAppearance.AppCompat"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="monospace"
-                    style="@style/TextAppearance.AppCompat"
                     android:text="@string/resultView"
                     android:textSize="14sp" />
             </ScrollView>
