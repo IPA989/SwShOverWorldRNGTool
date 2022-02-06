@@ -126,14 +126,12 @@ public class MainActivity extends AppCompatActivity {
     class AsyncAppTask extends AsyncTask<Void, Void, String> {
         @Override
         protected void onPreExecute() {
-            // ここに前処理を記述します
             Button button = findViewById(R.id.search);
             String word = getString(R.string.searching);
             button.setText(word);
         }
         @Override
         protected String doInBackground(Void... arg0) {
-            // バックグランド処理をここに記述します
             Locale locale = Locale.getDefault();
             String lo;
             if (locale.equals(Locale.JAPAN)) {
@@ -144,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
                 lo = "EN";
             }
             boolean search = true;
+            String word = "";
 
             Button searchButton = findViewById(R.id.search);
             EditText st0 = findViewById(R.id.s0);
@@ -170,6 +169,7 @@ public class MainActivity extends AppCompatActivity {
                 TRV = Integer.parseInt(trvs, 16); // 16進数
             }catch(Exception e){
                 search = false;
+                word = "TRV ";
             }
             boolean ShinyCharm = shiny.isChecked();
             boolean MarkCharm  = mark.isChecked();
@@ -250,30 +250,36 @@ public class MainActivity extends AppCompatActivity {
             Spinner natureSpinner = findViewById(R.id.natureList);
             String DesiredNature = (String) natureSpinner.getSelectedItem();
 
-            if(
-                    LevelMax > 100 ||
-                            SlotMax > 100 ||
-                            LevelMax < LevelMin ||
-                            SlotMax < SlotMin ||
-                            TSV > 65536
-            ){
+            if(LevelMax > 100 || LevelMax < LevelMin){
                 search = false;
+                word = "Level ";
+            }
+
+            if(TSV > 65536){
+                search = false;
+                word = "TSV ";
+            }
+
+            if(SlotMax > 100 ||SlotMax < SlotMin ){
+                search = false;
+                word = "Slot ";
             }
 
             for(int i=0; i<6; i++){
                 if(MaxIVs[i] < MinIVs[i]){
                     search = false;
+                    word = "IV ";
                 }
             }
 
+            String finalWord = word + getString(R.string.inputError);
             if(!search){
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         // ③
                         Context context = getApplicationContext();
-                        String word = getString(R.string.inputError);
-                        Toast toast = Toast.makeText(context, word,
+                        Toast toast = Toast.makeText(context, finalWord,
                                 Toast.LENGTH_SHORT);
                         toast.show();
                     }
