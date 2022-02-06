@@ -194,42 +194,11 @@
                 style="@style/TextAppearance.AppCompat"
                 android:text="@string/markLabel" />
 
-            <RadioGroup
-                android:id="@+id/MarkRadio"
+            <Spinner
+                android:id="@+id/markList"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:id="@+id/radioButton5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="@string/Ignore" />
-
-                <RadioButton
-                    android:id="@+id/radioButton7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/none" />
-
-                <RadioButton
-                    android:id="@+id/radioButton6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/any_mark" />
-
-                <RadioButton
-                    android:id="@+id/radioButton8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/any_personality" />
-
-                <RadioButton
-                    android:id="@+id/radioButton9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/rare" />
-            </RadioGroup>
+                android:layout_height="48dp"
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/ShinyLabel"
@@ -239,57 +208,25 @@
                 style="@style/TextAppearance.AppCompat"
                 android:text="@string/ShinyLabel" />
 
-            <RadioGroup
-                android:id="@+id/ShinyRadio"
+            <Spinner
+                android:id="@+id/shinyList"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="48dp"
+                android:layout_weight="1" />
 
-                <RadioButton
-                    android:id="@+id/radioButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="@string/Ignore" />
+            <TextView
+                android:id="@+id/natureLabel"
+                style="@style/TextAppearance.AppCompat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/natureLabel" />
 
-                <RadioButton
-                    android:id="@+id/radioButton2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="◇" />
-
-                <RadioButton
-                    android:id="@+id/radioButton4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="★" />
-
-                <RadioButton
-                    android:id="@+id/radioButton3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="★/◇" />
-            </RadioGroup>
-
-<!--            <TextView-->
-<!--                android:id="@+id/natureLabel"-->
-<!--                style="@style/TextAppearance.AppCompat"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="1"-->
-<!--                android:text="@string/natureLabel"-->
-<!--                tools:visibility="gone" />-->
-
-<!--            <EditText-->
-<!--                android:id="@+id/desiredNature"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="1"-->
-<!--                android:autofillHints=""-->
-<!--                android:ems="10"-->
-<!--                android:inputType="textPersonName"-->
-<!--                android:minHeight="48dp"-->
-<!--                android:text="@string/Ignore"-->
-<!--                tools:visibility="gone" />-->
+            <Spinner
+                android:id="@+id/natureList"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="1" />
 
             <CheckBox
                 android:id="@+id/cutecharm"

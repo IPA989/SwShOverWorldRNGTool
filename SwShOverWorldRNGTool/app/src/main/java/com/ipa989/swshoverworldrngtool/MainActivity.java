@@ -21,6 +21,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -242,24 +243,12 @@ public class MainActivity extends AppCompatActivity {
             CheckBox tsvsearch = findViewById(R.id.TSVSearch);
             boolean TSVSearch       = tsvsearch.isChecked();
 
-            String Ignore;
-            if(lo == "JA"){
-                Ignore = "絞り込み無し";
-            }else {
-                Ignore = "Ignore";
-            }
-
-            String DesiredNature = Ignore;
-            RadioGroup desiredmark = findViewById(R.id.MarkRadio);
-            RadioGroup desiredshiny = findViewById(R.id.ShinyRadio);
-
-            int checkedId   = desiredmark.getCheckedRadioButtonId();
-            RadioButton radioButton = (RadioButton) findViewById(checkedId);
-            String DesiredMark = radioButton.getText().toString();
-
-            checkedId  = desiredshiny.getCheckedRadioButtonId();
-            radioButton = (RadioButton) findViewById(checkedId);
-            String DesiredShiny = radioButton.getText().toString();
+            Spinner markSpinner = findViewById(R.id.markList);
+            String DesiredMark = (String) markSpinner.getSelectedItem();
+            Spinner shinySpinner = findViewById(R.id.shinyList);
+            String DesiredShiny = (String) shinySpinner.getSelectedItem();
+            Spinner natureSpinner = findViewById(R.id.natureList);
+            String DesiredNature = (String) natureSpinner.getSelectedItem();
 
             if(
                     LevelMax > 100 ||
