@@ -45,6 +45,16 @@
 <!--                    tools:text="Faulse" />-->
 <!--            </com.google.android.material.textfield.TextInputLayout>-->
 
+            <Button
+                android:id="@+id/setdataButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/purple_200"
+                android:onClick="setdata"
+                android:text="read data"
+                android:textSize="12sp" />
+
             <TextView
                 android:id="@+id/state0"
                 android:layout_width="wrap_content"
@@ -298,8 +308,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/natureLabel"
-                android:visibility="gone" />
+                android:text="@string/natureLabel" />
 
             <EditText
                 android:id="@+id/desiredNature"
@@ -310,8 +319,7 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:text="@string/Ignore"
-                android:visibility="gone" />
+                android:text="@string/Ignore" />
 
             <CheckBox
                 android:id="@+id/cutecharm"

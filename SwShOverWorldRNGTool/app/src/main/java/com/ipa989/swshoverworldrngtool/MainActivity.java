@@ -2,14 +2,18 @@ package com.ipa989.swshoverworldrngtool;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -33,9 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
-
     private ActivityMainBinding binding;
-
     public static final String EXTRA_MESSAGE =
             "com.example.android.swshoverworldrngtool.extra.MESSAGE";
     public static final String EXTRA_MESSAGE1 =
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int TEXT_REQUEST = 1;
     private EditText mMessages0;
     private EditText mMessages1;
+    private SharedPreferences dataStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
-        // Restore the state.
 
     }
 
@@ -93,6 +95,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onclickMainSearch(View view) {
+
+        // 端末にデータ保存 state, tsv, trv, おまもり
+        dataStore = getSharedPreferences("DataStore", MODE_PRIVATE);
+        SharedPreferences.Editor editor = dataStore.edit();
+        EditText s0 = findViewById(R.id.s0);
+        EditText s1 = findViewById(R.id.s1);
+        EditText tsv = findViewById(R.id.tsv);
+        EditText trv = findViewById(R.id.trv);
+        CheckBox shiny = findViewById(R.id.shinycharm);
+        CheckBox mark = findViewById(R.id.markcharm);
+        editor.putString("state0", (s0.getText().toString()));
+        editor.putString("state1", (s1.getText().toString()));
+        editor.putString("tsv", (tsv.getText().toString()));
+        editor.putString("trv", (trv.getText().toString()));
+        editor.putBoolean("shinyCharm", (shiny.isChecked()));
+        editor.putBoolean("markCharm", (mark.isChecked()));
+        //editor.commit();
+        editor.apply();
+
         // スレッド起動
         new AsyncAppTask().execute();
     }
@@ -135,14 +156,13 @@ public class MainActivity extends AppCompatActivity {
             CheckBox shiny = findViewById(R.id.shinycharm);
             CheckBox mark = findViewById(R.id.markcharm);
             CheckBox weather = findViewById(R.id.weather);
-            int TSV = Integer.parseInt(tsv.getText().toString());
-            String tsvs =trv.getText().toString();
+            String tsvs = tsv.getText().toString();
+            int TSV = Integer.parseInt(tsvs);
+            String trvs =trv.getText().toString();
             TSV *= 16;
-//        int TRV = 0;
-//        int TRV = Integer.parseInt(tsv.getText().toString());
             int TRV=0;
             try{
-                TRV = Integer.parseInt(tsvs, 16); // 16進数
+                TRV = Integer.parseInt(trvs, 16); // 16進数
             }catch(Exception e){
                 search = false;
             }
@@ -268,7 +288,7 @@ public class MainActivity extends AppCompatActivity {
                 return "Thread Samples";
             }
 
-            TextView tv = findViewById(R.id.resultView);
+
             String Result;
             try{
                 Result = resultFromJNI(
@@ -282,23 +302,22 @@ public class MainActivity extends AppCompatActivity {
                 Result = e.toString();
             }
 
-
-
             String finalResult = Result;
-            tv.post(new Runnable() {
-                @Override
-                public void run() {
-                    // ③
-                    if(finalResult != null) {
-                        tv.setText(finalResult);
-                    }
-                }
-            });
+//            tv.post(new Runnable() {
+//                @Override
+//                public void run() {
+//
+//                }
+//            });
 
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    // ③
+//                    setContentView(R.layout.main_result);
+                    TextView tv = findViewById(R.id.resultView);
+                    if(finalResult != null) {
+                        tv.setText(finalResult);
+                    }
                     Context context = getApplicationContext();
                     String word = getString(R.string.searchEnd);
                     Toast toast = Toast.makeText(context, word,
