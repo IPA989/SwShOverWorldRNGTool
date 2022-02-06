@@ -29,11 +29,29 @@
         android:text="@string/settingAbout" />
 
     <TextView
-        android:id="@+id/LicensesLabel"
+        android:id="@+id/VersionLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/LicensesLabel"
+        android:layout_marginTop="8dp"
+        android:text="@string/version"
         style="@style/TextAppearance.AppCompat"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/version"
+        style="@style/TextAppearance.AppCompat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:autoLink="web" />
+
+    <TextView
+        android:id="@+id/licensesLabel"
+        style="@style/TextAppearance.AppCompat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/LicensesLabel"
         android:textSize="20sp" />
 
     <TextView
@@ -44,5 +62,23 @@
         style="@style/TextAppearance.AppCompat"
         android:autoLink="web"
         android:text="@string/Licenses" />
+
+    <TextView
+        android:id="@+id/privacyPolicyLabel"
+        style="@style/TextAppearance.AppCompat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/privacy_policy"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/privacyPolicy"
+        style="@style/TextAppearance.AppCompat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:autoLink="web"
+        android:text="@string/privacyPolicyText" />
 
 </LinearLayout>

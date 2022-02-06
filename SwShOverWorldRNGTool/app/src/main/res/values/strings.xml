@@ -69,4 +69,7 @@
     <string name="searching">searching...</string>
     <string name="searchEnd">search End!</string>
     <string name="inputError">input Error!</string>
+    <string name="version">Version</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="privacyPolicyText">https://github.com/IPA989/SwShOverWorldRNGTool/blob/main/PrivacyPolicy</string>
 </resources>

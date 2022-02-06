@@ -70,4 +70,7 @@
     <string name="searching">検索中...</string>
     <string name="searchEnd">検索終了!</string>
     <string name="inputError">入力エラー!</string>
+    <string name="version">バージョン</string>
+    <string name="privacy_policy">プライバシーポリシー</string>
+    <string name="privacyPolicyText">https://github.com/IPA989/SwShOverWorldRNGTool/blob/main/PrivacyPolicy</string>
 </resources>
