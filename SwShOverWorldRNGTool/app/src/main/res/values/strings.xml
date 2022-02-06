@@ -13,7 +13,7 @@
     <string name="stateSearchButton">State</string>
     <string name="advancesLabel">Advances:</string>
     <string name="advMin">0</string>
-    <string name="advMax">100</string>
+    <string name="advMax">10000</string>
     <string name="tsvLabel">TID:</string>
     <string name="tsv">19744</string>
     <string name="trv">0</string>
