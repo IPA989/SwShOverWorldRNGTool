@@ -25,36 +25,6 @@
             android:layout_marginRight="8dp"
             android:orientation="vertical">
 
-            <!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:id="@+id/dateFilterContainer"-->
-<!--                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:hint="Shiny Charm"-->
-<!--                app:boxBackgroundColor="@color/design_default_color_on_primary">-->
-
-<!--                <AutoCompleteTextView-->
-<!--                    android:id="@+id/datesFilterSpinner"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:inputType="none"-->
-<!--                    android:dropDownSelector="@color/design_default_color_on_primary"-->
-<!--                    android:ellipsize="end"-->
-<!--                    android:maxLines="1"-->
-<!--                    android:singleLine="true"-->
-<!--                    tools:text="Faulse" />-->
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
-
-            <Button
-                android:id="@+id/setdataButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/purple_200"
-                android:onClick="setdata"
-                android:text="read data"
-                android:textSize="12sp" />
-
             <TextView
                 android:id="@+id/state0"
                 android:layout_width="wrap_content"
