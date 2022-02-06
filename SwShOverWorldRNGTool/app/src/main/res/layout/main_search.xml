@@ -14,8 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-
         <LinearLayout
             android:id="@+id/RelativeLayout1"
             android:layout_width="match_parent"
@@ -272,24 +270,26 @@
                     android:text="★/◇" />
             </RadioGroup>
 
-            <TextView
-                android:id="@+id/natureLabel"
-                style="@style/TextAppearance.AppCompat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/natureLabel" />
+<!--            <TextView-->
+<!--                android:id="@+id/natureLabel"-->
+<!--                style="@style/TextAppearance.AppCompat"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="@string/natureLabel"-->
+<!--                tools:visibility="gone" />-->
 
-            <EditText
-                android:id="@+id/desiredNature"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:autofillHints=""
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:text="@string/Ignore" />
+<!--            <EditText-->
+<!--                android:id="@+id/desiredNature"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:autofillHints=""-->
+<!--                android:ems="10"-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:minHeight="48dp"-->
+<!--                android:text="@string/Ignore"-->
+<!--                tools:visibility="gone" />-->
 
             <CheckBox
                 android:id="@+id/cutecharm"
@@ -784,12 +784,20 @@
                 android:id="@+id/search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/purple_500"
                 android:onClick="onclickMainSearch"
                 android:text="@string/searchButton"
                 android:textSize="20sp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="1"
+                android:visibility="invisible" />
 
         </LinearLayout>
 

@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -116,6 +117,9 @@ public class MainActivity extends AppCompatActivity {
 
         // スレッド起動
         new AsyncAppTask().execute();
+        //プログレスバーを表示
+        ProgressBar prog = findViewById(R.id.progressBar);
+        prog.setVisibility(View.VISIBLE);
     }
 
     class AsyncAppTask extends AsyncTask<Void, Void, String> {
@@ -303,12 +307,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
             String finalResult = Result;
-//            tv.post(new Runnable() {
-//                @Override
-//                public void run() {
-//
-//                }
-//            });
 
             runOnUiThread(new Runnable() {
                 @Override
@@ -333,6 +331,10 @@ public class MainActivity extends AppCompatActivity {
             Button button = findViewById(R.id.search);
             String word = getString(R.string.searchButton);
             button.setText(word);
+
+            //プログレスバーを消す
+            ProgressBar prog = findViewById(R.id.progressBar);
+            prog.setVisibility(View.INVISIBLE);
         }
     }
 
