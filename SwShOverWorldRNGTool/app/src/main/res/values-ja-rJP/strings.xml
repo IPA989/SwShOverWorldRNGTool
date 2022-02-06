@@ -67,4 +67,7 @@
     <string name="any_mark">証有り</string>
     <string name="any_personality">雰囲気証</string>
     <string name="rare">ひとをしらない</string>
+    <string name="searching">検索中...</string>
+    <string name="searchEnd">検索終了!</string>
+    <string name="inputError">入力エラー!</string>
 </resources>

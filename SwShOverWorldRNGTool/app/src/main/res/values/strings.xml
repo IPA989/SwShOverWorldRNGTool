@@ -66,4 +66,7 @@
     <string name="any_mark">Any Mark</string>
     <string name="any_personality">Any Personality</string>
     <string name="rare">Rare</string>
+    <string name="searching">searching...</string>
+    <string name="searchEnd">search End!</string>
+    <string name="inputError">input Error!</string>
 </resources>
