@@ -9,8 +9,8 @@ android {
         applicationId "com.ipa989.swshoverworldrngtool"
         minSdk 24
         targetSdk 32
-        versionCode 8
-        versionName "1.2.0"
+        versionCode 9
+        versionName "1.3.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
@@ -40,6 +40,7 @@ android {
     buildFeatures {
         viewBinding true
     }
+    namespace 'com.ipa989.swshoverworldrngtool'
 }
 
 dependencies {
