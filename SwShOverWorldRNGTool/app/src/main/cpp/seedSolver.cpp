@@ -8,8 +8,9 @@
 // 結果最大数設定
 // returnをjobjectarrayでvector<string>で行区切りで出力すれば色違いの色を変えられる?
 
-extern "C" JNIEXPORT jstring JNICALL
-Java_com_ipa989_swshoverworldrngtool_MainActivity_resultFromJNI(
+extern "C"
+JNIEXPORT jstring JNICALL
+        Java_com_ipa989_swshoverworldrngtool_ui_main_MainActivity_resultFromJNI(
         JNIEnv* env,
         jobject ,
         jstring locale,
