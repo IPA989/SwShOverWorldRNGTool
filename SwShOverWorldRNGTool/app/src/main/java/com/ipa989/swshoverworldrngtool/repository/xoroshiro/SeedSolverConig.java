@@ -1,4 +1,4 @@
-package com.ipa989.swshoverworldrngtool.xoroshiro;
+package com.ipa989.swshoverworldrngtool.repository.xoroshiro;
 
 
 import java.util.OptionalLong;

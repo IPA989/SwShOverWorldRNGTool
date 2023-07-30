@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.ipa989.swshoverworldrngtool.xoroshiro.SeedSolver;
-import com.ipa989.swshoverworldrngtool.xoroshiro.SeedSolverConig;
+import com.ipa989.swshoverworldrngtool.repository.xoroshiro.SeedSolver;
+import com.ipa989.swshoverworldrngtool.repository.xoroshiro.SeedSolverConig;
 
 import java.util.List;
 import java.util.Locale;
