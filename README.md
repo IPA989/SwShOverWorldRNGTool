@@ -4,7 +4,8 @@
 
 # 入手
 
-* [Google Play Store](https://play.google.com/store/apps/details?id=com.ipa989.swshoverworldrngtool) からインストール
+* ~~[Google Play Store](https://play.google.com/store/apps/details?id=com.ipa989.swshoverworldrngtool) からインストール~~
+    * Play Storeでの公開は終了しました。リリースページからのダウンロードをお願いいたします。
 
 * [リリースページ](https://github.com/IPA989/SwShOverWorldRNGTool/releases) から.apkファイルをダウンロードし、最新版をインストール
 
@@ -68,7 +69,9 @@ This program is Android application for Pokémon Sword and Shield Overworld RNG.
 
 # Download
 
-* [Google Play Store](https://play.google.com/store/apps/details?id=com.ipa989.swshoverworldrngtool)
+* ~~[Google Play Store](https://play.google.com/store/apps/details?id=com.ipa989.swshoverworldrngtool)~~
+    * Distribution in the Play Store has been suspended.
+Please download from the release page.
 
 * [Release](https://github.com/IPA989/SwShOverWorldRNGTool/releases)
 
